@@ -19,13 +19,7 @@ namespace Book_Management
 
     public class MemberRepository
     {
-        private const string ConnectionDB =
-            "Server=localhost;" +
-            "Database=LibraryDB;" +
-            "Integrated Security=True;" +
-            "Encrypt=True;" +
-            "TrustServerCertificate=True;" +
-            "Connect Timeout=5;";
+        private const string ConnectionDB = DatabaseConfig.ConnectionString;
 
         // 아이디 중복 검사
         public async Task<bool> IsIdExists(string id)

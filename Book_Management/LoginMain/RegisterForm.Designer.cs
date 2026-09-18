@@ -37,7 +37,6 @@
             this.Id_input = new System.Windows.Forms.TextBox();
             this.Pw = new System.Windows.Forms.Label();
             this.Pw_input = new System.Windows.Forms.TextBox();
-            this.CheckId = new System.Windows.Forms.Button();
             this.Id_check_mark = new System.Windows.Forms.Label();
             this.CheckPw = new System.Windows.Forms.Label();
             this.CheckPw_input = new System.Windows.Forms.TextBox();
@@ -50,7 +49,7 @@
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("휴먼모음T", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Title.Location = new System.Drawing.Point(147, 58);
+            this.Title.Location = new System.Drawing.Point(144, 53);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(145, 30);
             this.Title.TabIndex = 0;
@@ -60,7 +59,7 @@
             // 
             this.lName.AutoSize = true;
             this.lName.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lName.Location = new System.Drawing.Point(67, 150);
+            this.lName.Location = new System.Drawing.Point(37, 150);
             this.lName.Name = "lName";
             this.lName.Size = new System.Drawing.Size(44, 23);
             this.lName.TabIndex = 0;
@@ -69,7 +68,7 @@
             // Name_input
             // 
             this.Name_input.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Name_input.Location = new System.Drawing.Point(210, 140);
+            this.Name_input.Location = new System.Drawing.Point(180, 140);
             this.Name_input.MaxLength = 50;
             this.Name_input.Name = "Name_input";
             this.Name_input.Size = new System.Drawing.Size(139, 32);
@@ -79,7 +78,7 @@
             // 
             this.Phone.AutoSize = true;
             this.Phone.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Phone.Location = new System.Drawing.Point(67, 210);
+            this.Phone.Location = new System.Drawing.Point(37, 210);
             this.Phone.Name = "Phone";
             this.Phone.Size = new System.Drawing.Size(61, 23);
             this.Phone.TabIndex = 0;
@@ -89,7 +88,7 @@
             // Phone_input
             // 
             this.Phone_input.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Phone_input.Location = new System.Drawing.Point(210, 200);
+            this.Phone_input.Location = new System.Drawing.Point(180, 200);
             this.Phone_input.MaxLength = 20;
             this.Phone_input.Name = "Phone_input";
             this.Phone_input.Size = new System.Drawing.Size(139, 32);
@@ -100,7 +99,7 @@
             // 
             this.Id.AutoSize = true;
             this.Id.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Id.Location = new System.Drawing.Point(67, 270);
+            this.Id.Location = new System.Drawing.Point(37, 270);
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(61, 23);
             this.Id.TabIndex = 0;
@@ -110,7 +109,7 @@
             // Id_input
             // 
             this.Id_input.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Id_input.Location = new System.Drawing.Point(210, 260);
+            this.Id_input.Location = new System.Drawing.Point(180, 260);
             this.Id_input.MaxLength = 20;
             this.Id_input.Name = "Id_input";
             this.Id_input.Size = new System.Drawing.Size(139, 32);
@@ -121,7 +120,7 @@
             // 
             this.Pw.AutoSize = true;
             this.Pw.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Pw.Location = new System.Drawing.Point(67, 330);
+            this.Pw.Location = new System.Drawing.Point(37, 330);
             this.Pw.Name = "Pw";
             this.Pw.Size = new System.Drawing.Size(78, 23);
             this.Pw.TabIndex = 0;
@@ -131,7 +130,7 @@
             // Pw_input
             // 
             this.Pw_input.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Pw_input.Location = new System.Drawing.Point(210, 320);
+            this.Pw_input.Location = new System.Drawing.Point(180, 320);
             this.Pw_input.MaxLength = 256;
             this.Pw_input.Name = "Pw_input";
             this.Pw_input.Size = new System.Drawing.Size(139, 32);
@@ -139,24 +138,15 @@
             this.Pw_input.UseSystemPasswordChar = true;
             this.Pw_input.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // CheckId
-            // 
-            this.CheckId.Location = new System.Drawing.Point(441, 112);
-            this.CheckId.Name = "CheckId";
-            this.CheckId.Size = new System.Drawing.Size(75, 25);
-            this.CheckId.TabIndex = 2;
-            this.CheckId.Text = "중복확인";
-            this.CheckId.UseVisualStyleBackColor = true;
-            // 
             // Id_check_mark
             // 
             this.Id_check_mark.AutoSize = true;
             this.Id_check_mark.BackColor = System.Drawing.Color.White;
-            this.Id_check_mark.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Id_check_mark.Font = new System.Drawing.Font("돋움", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Id_check_mark.ForeColor = System.Drawing.Color.Green;
-            this.Id_check_mark.Location = new System.Drawing.Point(330, 267);
+            this.Id_check_mark.Location = new System.Drawing.Point(300, 267);
             this.Id_check_mark.Name = "Id_check_mark";
-            this.Id_check_mark.Size = new System.Drawing.Size(16, 16);
+            this.Id_check_mark.Size = new System.Drawing.Size(14, 13);
             this.Id_check_mark.TabIndex = 3;
             this.Id_check_mark.Text = "✓";
             this.Id_check_mark.Visible = false;
@@ -165,7 +155,7 @@
             // 
             this.CheckPw.AutoSize = true;
             this.CheckPw.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.CheckPw.Location = new System.Drawing.Point(67, 385);
+            this.CheckPw.Location = new System.Drawing.Point(37, 385);
             this.CheckPw.Name = "CheckPw";
             this.CheckPw.Size = new System.Drawing.Size(124, 23);
             this.CheckPw.TabIndex = 0;
@@ -175,7 +165,7 @@
             // CheckPw_input
             // 
             this.CheckPw_input.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.CheckPw_input.Location = new System.Drawing.Point(210, 380);
+            this.CheckPw_input.Location = new System.Drawing.Point(180, 380);
             this.CheckPw_input.MaxLength = 256;
             this.CheckPw_input.Name = "CheckPw_input";
             this.CheckPw_input.Size = new System.Drawing.Size(139, 32);
@@ -186,7 +176,7 @@
             // btn_register
             // 
             this.btn_register.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_register.Location = new System.Drawing.Point(167, 461);
+            this.btn_register.Location = new System.Drawing.Point(155, 461);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(125, 40);
             this.btn_register.TabIndex = 4;
@@ -198,7 +188,7 @@
             // 
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_cancel.Location = new System.Drawing.Point(167, 507);
+            this.btn_cancel.Location = new System.Drawing.Point(155, 507);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(125, 40);
             this.btn_cancel.TabIndex = 4;
@@ -210,7 +200,7 @@
             // 
             this.btn_idcheck.AutoSize = true;
             this.btn_idcheck.Font = new System.Drawing.Font("휴먼모음T", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_idcheck.Location = new System.Drawing.Point(353, 260);
+            this.btn_idcheck.Location = new System.Drawing.Point(337, 260);
             this.btn_idcheck.Name = "btn_idcheck";
             this.btn_idcheck.Size = new System.Drawing.Size(83, 33);
             this.btn_idcheck.TabIndex = 5;
@@ -224,12 +214,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(440, 608);
+            this.ClientSize = new System.Drawing.Size(444, 611);
             this.Controls.Add(this.btn_idcheck);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.Id_check_mark);
-            this.Controls.Add(this.CheckId);
             this.Controls.Add(this.CheckPw_input);
             this.Controls.Add(this.CheckPw);
             this.Controls.Add(this.Pw_input);
@@ -266,7 +255,6 @@
         private System.Windows.Forms.TextBox Id_input;
         private System.Windows.Forms.Label Pw;
         private System.Windows.Forms.TextBox Pw_input;
-        private System.Windows.Forms.Button CheckId;
         private System.Windows.Forms.Label Id_check_mark;
         private System.Windows.Forms.Label CheckPw;
         private System.Windows.Forms.TextBox CheckPw_input;
