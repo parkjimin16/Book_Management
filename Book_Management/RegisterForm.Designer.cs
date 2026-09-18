@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Title = new System.Windows.Forms.Label();
-            this.Name = new System.Windows.Forms.Label();
+            this.lName = new System.Windows.Forms.Label();
             this.Name_input = new System.Windows.Forms.TextBox();
             this.Phone = new System.Windows.Forms.Label();
             this.Phone_input = new System.Windows.Forms.TextBox();
@@ -38,7 +38,7 @@
             this.Pw = new System.Windows.Forms.Label();
             this.Pw_input = new System.Windows.Forms.TextBox();
             this.CheckId = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Id_check_mark = new System.Windows.Forms.Label();
             this.CheckPw = new System.Windows.Forms.Label();
             this.CheckPw_input = new System.Windows.Forms.TextBox();
             this.btn_register = new System.Windows.Forms.Button();
@@ -56,15 +56,15 @@
             this.Title.TabIndex = 0;
             this.Title.Text = "신규회원가입";
             // 
-            // Name
+            // lName
             // 
-            this.Name.AutoSize = true;
-            this.Name.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Name.Location = new System.Drawing.Point(67, 150);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(44, 23);
-            this.Name.TabIndex = 0;
-            this.Name.Text = "이름";
+            this.lName.AutoSize = true;
+            this.lName.Font = new System.Drawing.Font("휴먼모음T", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lName.Location = new System.Drawing.Point(67, 150);
+            this.lName.Name = "lName";
+            this.lName.Size = new System.Drawing.Size(44, 23);
+            this.lName.TabIndex = 0;
+            this.lName.Text = "이름";
             // 
             // Name_input
             // 
@@ -148,17 +148,18 @@
             this.CheckId.Text = "중복확인";
             this.CheckId.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // Id_check_mark
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(331, 267);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "✓";
+            this.Id_check_mark.AutoSize = true;
+            this.Id_check_mark.BackColor = System.Drawing.Color.White;
+            this.Id_check_mark.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Id_check_mark.ForeColor = System.Drawing.Color.Green;
+            this.Id_check_mark.Location = new System.Drawing.Point(330, 267);
+            this.Id_check_mark.Name = "Id_check_mark";
+            this.Id_check_mark.Size = new System.Drawing.Size(16, 16);
+            this.Id_check_mark.TabIndex = 3;
+            this.Id_check_mark.Text = "✓";
+            this.Id_check_mark.Visible = false;
             // 
             // CheckPw
             // 
@@ -227,7 +228,7 @@
             this.Controls.Add(this.btn_idcheck);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_register);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Id_check_mark);
             this.Controls.Add(this.CheckId);
             this.Controls.Add(this.CheckPw_input);
             this.Controls.Add(this.CheckPw);
@@ -238,7 +239,7 @@
             this.Controls.Add(this.Phone_input);
             this.Controls.Add(this.Phone);
             this.Controls.Add(this.Name_input);
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.lName);
             this.Controls.Add(this.Title);
             this.Font = new System.Drawing.Font("휴먼모음T", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -257,7 +258,7 @@
         #endregion
 
         private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label lName;
         private System.Windows.Forms.TextBox Name_input;
         private System.Windows.Forms.Label Phone;
         private System.Windows.Forms.TextBox Phone_input;
@@ -266,7 +267,7 @@
         private System.Windows.Forms.Label Pw;
         private System.Windows.Forms.TextBox Pw_input;
         private System.Windows.Forms.Button CheckId;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Id_check_mark;
         private System.Windows.Forms.Label CheckPw;
         private System.Windows.Forms.TextBox CheckPw_input;
         private System.Windows.Forms.Button btn_register;

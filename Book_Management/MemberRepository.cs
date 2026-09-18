@@ -20,7 +20,7 @@ namespace Book_Management
     public class MemberRepository
     {
         private const string ConnectionDB =
-            @"Server=(localdb)\SQLEXPRESS;" +
+            @"Server=(Localdb)\MSSQLLocalDB;" +
             "Database=LibraryDB;" +
             "Integrated Security=True;" +
             "Encrypt=True;" +
@@ -30,8 +30,7 @@ namespace Book_Management
         // 아이디 중복 검사
         public async Task<bool> IsIdExists(string id)
         {
-            using var connection =
-                new SqlConnection(ConnectionDB);
+            using var connection = new SqlConnection(ConnectionDB);
 
             await connection.OpenAsync();
 
@@ -117,9 +116,7 @@ namespace Book_Management
                 MemberCode = reader["회원코드"].ToString()!
             };
 
-            // 정의하지 않은 회원코드는 허용하지 않습니다.
-            if (member.MemberCode != "01" &&
-                member.MemberCode != "02")
+            if (member.MemberCode != "01" && member.MemberCode != "02")
             {
                 return null;
             }

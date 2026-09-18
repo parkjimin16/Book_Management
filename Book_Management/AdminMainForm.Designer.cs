@@ -28,12 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.adminmain = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // adminmain
+            // 
+            this.adminmain.AutoSize = true;
+            this.adminmain.Location = new System.Drawing.Point(359, 78);
+            this.adminmain.Name = "adminmain";
+            this.adminmain.Size = new System.Drawing.Size(38, 12);
+            this.adminmain.TabIndex = 0;
+            this.adminmain.Text = "label1";
+            // 
+            // AdminMainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.adminmain);
+            this.Name = "AdminMainForm";
             this.Text = "AdminMainForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label adminmain;
     }
 }

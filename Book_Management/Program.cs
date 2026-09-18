@@ -15,8 +15,34 @@ namespace Book_Management
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            using var loginForm = new LoginForm();
+            //로그인창 제일 먼저 실행
+            DialogResult result = loginForm.ShowDialog();
+
+            // 로그인하지 않고 창을 닫으면 프로그램 종료
+            if (result != DialogResult.OK)
+            {
+                return;
+            }
+
+            LoginMember? member = loginForm.CurrentMember;
+
+            if (member == null)
+            {
+                return;
+            }
+
+            if (member.MemberCode == "01")
+            {
+                using var mainForm = new AdminMainForm(member);
+                Application.Run(mainForm);
+            }
+
+            else if (member.MemberCode == "02")
+            {
+                using var mainForm = new UserMainForm(member);
+                Application.Run(mainForm);
+            }
         }
     }
 }

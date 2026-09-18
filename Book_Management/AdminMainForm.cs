@@ -16,5 +16,17 @@ namespace Book_Management
         {
             InitializeComponent();
         }
+
+        public AdminMainForm(LoginMember member) : this()
+        {
+            if (member.MemberCode != "01")
+            {
+                throw new InvalidOperationException(
+                    "관리자 계정이 아닙니다.");
+            }
+
+            adminmain.Text =
+                $"관리자 {member.Name}님, 환영합니다.";
+        }
     }
 }

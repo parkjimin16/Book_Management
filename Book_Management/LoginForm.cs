@@ -21,8 +21,10 @@ namespace Book_Management
         public LoginForm()
         {
             InitializeComponent();
+
             btn_login.Click += Btn_login_click;
             btn_register.Click += Btn_register_click;
+
             FormClosing += (_, e) =>
             {
                 if (_isBusy)
@@ -43,8 +45,7 @@ namespace Book_Management
             string id = ID_input.Text.Trim();
             string password = PW_input.Text;
 
-            if (string.IsNullOrWhiteSpace(id) ||
-                string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("아이디와 비밀번호가 다릅니다");
                 return;
@@ -55,9 +56,7 @@ namespace Book_Management
 
             try
             {
-                member = await _repository.Login(
-                    id,
-                    password);
+                member = await _repository.Login(id, password);
             }
             catch (SqlException)
             {

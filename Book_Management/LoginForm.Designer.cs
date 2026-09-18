@@ -79,7 +79,6 @@
             this.btn_login.TabIndex = 2;
             this.btn_login.Text = "로그인";
             this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += true;
             // 
             // btn_register
             // 
