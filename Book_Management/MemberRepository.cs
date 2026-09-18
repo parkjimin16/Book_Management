@@ -20,7 +20,7 @@ namespace Book_Management
     public class MemberRepository
     {
         private const string ConnectionDB =
-            @"Server=(Localdb)\MSSQLLocalDB;" +
+            "Server=localhost;" +
             "Database=LibraryDB;" +
             "Integrated Security=True;" +
             "Encrypt=True;" +

@@ -98,11 +98,18 @@ namespace Book_Management
                     Id_input.BackColor = _originalColors[Id_input];
                 }
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 ResetIdCheck();
                 MarkError(Id_input);
-                MessageBox.Show("DB 연결 또는 아이디 조회에 실패했습니다.");
+
+                MessageBox.Show(
+                    this,
+                    $"SQL 오류 번호: {ex.Number}\n\n" +
+                    $"오류 내용:\n{ex.Message}",
+                    "아이디 중복확인 오류",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             finally
             {
