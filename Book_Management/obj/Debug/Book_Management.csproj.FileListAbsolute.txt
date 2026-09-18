@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\bin\Debug\Book_Management.exe.config
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\bin\Debug\Book_Management.exe
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\bin\Debug\Book_Management.pdb
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\obj\Debug\Book_Management.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\obj\Debug\Book_Management.Properties.Resources.resources
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\obj\Debug\Book_Management.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\obj\Debug\Book_Management.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\obj\Debug\Book_Management.exe
+C:\Users\admin\Desktop\새 폴더\Book_Management\Book_Management\obj\Debug\Book_Management.pdb
