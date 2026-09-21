@@ -84,9 +84,7 @@ namespace Book_Management
                 errors.Add("이름은 최소 2글자 이상입니다.");
             }
 
-            if (!Regex.IsMatch(
-                phone,
-                @"\A010-[0-9]{4}-[0-9]{4}\z"))
+            if (!Regex.IsMatch(phone, @"\A010-[0-9]{4}-[0-9]{4}\z"))
             {
                 txtPhone.BackColor = Color.LightCoral;
                 errors.Add("연락처 형식이 잘못되었습니다.");
@@ -205,18 +203,15 @@ namespace Book_Management
                 return;
             }
 
-            // 임시 비밀번호를 생성해 두 입력칸에 채웁니다.
-            string temporaryPassword =
-                Guid.NewGuid().ToString("N");
+            const string resetPassword = "1111";
 
-            txtPw.Text = temporaryPassword;
-            txtPwConfirm.Text = temporaryPassword;
+            txtPw.Text = resetPassword;
+            txtPwConfirm.Text = resetPassword;
 
             MessageBox.Show(
                 this,
-                $"임시 비밀번호:\n{temporaryPassword}\n\n" +
                 "아직 DB에는 반영되지 않았습니다.\n" +
-                "‘수정’ 버튼을 누르면 이 비밀번호로 변경됩니다.");
+                "‘수정’ 버튼을 누르면 비밀번호가 초기화됩니다.");
         }
 
         private void SetBusy(bool busy)
