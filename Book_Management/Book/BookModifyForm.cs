@@ -137,9 +137,7 @@ namespace Book_Management
             {
                 txtYear.BackColor = Color.LightCoral;
 
-                MessageBox.Show(
-                    this,
-                    "발행 연도는 1~9999 사이의 숫자로 입력해주세요.");
+                MessageBox.Show(this, "발행 연도는 1~9999 사이의 숫자로 입력해주세요.");
 
                 txtYear.Focus();
                 return false;
@@ -148,15 +146,11 @@ namespace Book_Management
             // 하이픈 없는 ISBN-10 또는 ISBN-13 형태 확인
             string isbn = txtIsbn.Text.Trim();
 
-            if (!Regex.IsMatch(
-                isbn,
-                @"\A(?:[0-9]{13}|[0-9]{9}[0-9Xx])\z"))
+            if (!Regex.IsMatch(isbn, @"\A(?:[0-9]{13}|[0-9]{9}[0-9Xx])\z"))
             {
                 txtIsbn.BackColor = Color.LightCoral;
 
-                MessageBox.Show(
-                    this,
-                    "ISBN은 하이픈 없이 10자리 또는 13자리로 입력해주세요.");
+                MessageBox.Show(this,"ISBN은 하이픈 없이 10자리 또는 13자리로 입력해주세요.");
 
                 txtIsbn.Focus();
                 return false;
@@ -201,9 +195,7 @@ namespace Book_Management
 
                     if (affected == 0)
                     {
-                        MessageBox.Show(
-                            this,
-                            "수정할 도서가 없습니다. 목록을 새로고침해주세요.");
+                        MessageBox.Show(this, "수정할 도서가 없습니다. 목록을 새로고침해주세요.");
 
                         return;
                     }
@@ -215,9 +207,56 @@ namespace Book_Management
             }
             catch (SqlException ex)
             {
+                MessageBox.Show(this, $"저장에 실패했습니다.\n오류 번호: {ex.Number}\n{ex.Message}");
+
+                return;
+            }
+            finally
+            {
+                SetBusy(false);
+            }
+
+            MessageBox.Show(this, isEdit ? "수정되었습니다." : "등록되었습니다.");
+
+            // 부모 화면에서 목록을 다시 조회하도록 알립니다.
+            DialogResult = DialogResult.OK;
+
+
+        }
+
+        private async void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (_isBusy || !_bookNumber.HasValue)
+            {
+                return;
+            }
+
+            DialogResult answer = MessageBox.Show(
+                this,
+                $"관리번호 {_bookNumber.Value} 도서를 삭제하겠습니까?",
+                "도서 삭제",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (answer != DialogResult.Yes)
+            {
+                return;
+            }
+
+            int affected;
+
+            SetBusy(true);
+
+            try
+            {
+                affected = await _repository.Delete(_bookNumber.Value);
+            }
+            catch (SqlException ex)
+            {
                 MessageBox.Show(
                     this,
-                    $"저장에 실패했습니다.\n오류 번호: {ex.Number}\n{ex.Message}");
+                    $"삭제에 실패했습니다.\n오류 번호: {ex.Number}\n{ex.Message}");
 
                 return;
             }
@@ -228,17 +267,11 @@ namespace Book_Management
 
             MessageBox.Show(
                 this,
-                isEdit ? "수정되었습니다." : "등록되었습니다.");
+                affected > 0
+                    ? "삭제되었습니다."
+                    : "이미 삭제된 도서입니다.");
 
-            // 부모 화면에서 목록을 다시 조회하도록 알립니다.
             DialogResult = DialogResult.OK;
-
-
-        }
-
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void SetBusy(bool busy)

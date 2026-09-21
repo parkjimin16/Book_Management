@@ -1,21 +1,25 @@
 ﻿using Book_Management.Book;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Book_Management.MemberData;
+
+
 
 namespace Book_Management
 {
     public partial class AdminMainForm : Form
     {
         private readonly BookRepository _repository = new BookRepository();
-
+        private readonly MemberRepository _memberRepository = new MemberRepository();
+        private LoginMember _loginMember;
         private AdminPage _currentPage = AdminPage.Books;
         private bool _isBusy;
 
@@ -60,6 +64,10 @@ namespace Book_Management
             btnAddBook.Click += BtnAddBook_Click;
             btnDeleteBook.Click += BtnDeleteBook_Click;
 
+            btnAddMember.Click += BtnAddMember_Click;
+            btnDeleteMember.Click += BtnDeleteMember_Click;
+
+
             dgvBookList.CellMouseDoubleClick += DgvBookList_CellMouseDoubleClick;
 
             FormClosing += (_, e) =>
@@ -84,8 +92,7 @@ namespace Book_Management
             txtSearch.Clear();
 
             cmbSearchColumn.Items.Clear();
-            cmbSearchColumn.Items.AddRange(
-                BookRepository.GetSearchColumns(page));
+            cmbSearchColumn.Items.AddRange(BookRepository.GetSearchColumns(page));
 
             cmbSearchColumn.SelectedIndex = 0;
 
@@ -120,8 +127,7 @@ namespace Book_Management
                 return;
             }
 
-            string column =
-                cmbSearchColumn.SelectedItem.ToString();
+            string column = cmbSearchColumn.SelectedItem.ToString();
 
             string keyword = txtSearch.Text.Trim();
 
@@ -138,9 +144,7 @@ namespace Book_Management
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(
-                    this,
-                    $"목록 조회에 실패했습니다.\n오류 번호: {ex.Number}\n{ex.Message}");
+                MessageBox.Show(this, $"목록 조회에 실패했습니다.\n오류 번호: {ex.Number}\n{ex.Message}");
             }
             finally
             {
@@ -252,13 +256,14 @@ namespace Book_Management
         // 도서 더블클릭 → 수정 팝업
         private async void DgvBookList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (_isBusy || _currentPage != AdminPage.Books)
+            if (_isBusy)
             {
                 return;
             }
 
-            // 헤더를 누르거나 왼쪽 버튼이 아니면 처리하지 않습니다.
-            if (e.RowIndex < 0 || e.ColumnIndex < 0 || e.Button != MouseButtons.Left)
+            if (e.RowIndex < 0 ||
+                e.ColumnIndex < 0 ||
+                e.Button != MouseButtons.Left)
             {
                 return;
             }
@@ -272,6 +277,44 @@ namespace Book_Management
 
             DataRow row = rowView.Row;
 
+            // 회원 수정
+            if (_currentPage == AdminPage.Members)
+            {
+                var member = new MemberData
+                {
+                    MemberNumber = Convert.ToInt32(row["회원번호"]),
+                    Name = Convert.ToString(row["이름"]),
+                    Phone = Convert.ToString(row["연락처"]),
+                    LoginId = Convert.ToString(row["아이디"])
+                };
+
+                using var memberForm = new MemberEditForm(member);
+
+                if (memberForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    // 본인 이름을 수정했으면 상단 표시도 변경
+                    if (_loginMember != null &&
+                        _loginMember.MemberNumber == member.MemberNumber)
+                    {
+                        _loginMember.Name = memberForm.SavedName;
+
+                        adminmain.Text =
+                            $"회원명: {_loginMember.Name}" +
+                            $"({_loginMember.LoginId})";
+                    }
+
+                    await LoadListAsync();
+                }
+
+                return;
+            }
+
+            // 도서 관리 화면에서만 도서 수정
+            if (_currentPage != AdminPage.Books)
+            {
+                return;
+            }
+
             var book = new BookData
             {
                 BookNumber = Convert.ToInt32(row["관리번호"]),
@@ -279,15 +322,17 @@ namespace Book_Management
                 Author = Convert.ToString(row["저자"]),
                 Publisher = Convert.ToString(row["출판사"]),
 
-                PublicationYear = row.IsNull("발행연도") ? (short)0 : Convert.ToInt16(row["발행연도"]),
+                PublicationYear = row.IsNull("발행연도")
+                    ? (short)0
+                    : Convert.ToInt16(row["발행연도"]),
 
                 Category = Convert.ToString(row["카테고리"]),
                 Isbn = Convert.ToString(row["ISBN"])
             };
 
-            using var form = new BookModifyForm(book);
+            using var bookForm = new BookModifyForm(book);
 
-            if (form.ShowDialog(this) == DialogResult.OK)
+            if (bookForm.ShowDialog(this) == DialogResult.OK)
             {
                 await LoadListAsync();
             }
@@ -297,9 +342,11 @@ namespace Book_Management
         {
             _isBusy = busy;
 
+            bool isMemberPage =
+                _currentPage == AdminPage.Members;
+
             btnBooks.Enabled = !busy;
             btnMembers.Enabled = !busy;
-            btnRequestBook.Enabled = !busy;
 
             cmbSearchColumn.Enabled = !busy;
             txtSearch.Enabled = !busy;
@@ -308,15 +355,160 @@ namespace Book_Management
 
             dgvBookList.Enabled = !busy;
 
-            // 도서 목록과 요청 현황에서 등록 가능
-            btnAddBook.Enabled =
-                !busy && _currentPage != AdminPage.Members;
+            // 화면에 따라 버튼 표시 전환
+            btnAddBook.Visible = !isMemberPage;
+            btnDeleteBook.Visible = !isMemberPage;
+            btnRequestBook.Visible = !isMemberPage;
 
-            // 실제 보유 도서 목록에서만 삭제 가능
+            btnAddMember.Visible = isMemberPage;
+            btnDeleteMember.Visible = isMemberPage;
+
+            // 도서 관련 버튼
+            btnAddBook.Enabled = !busy && !isMemberPage;
+            btnRequestBook.Enabled = !busy && !isMemberPage;
+
             btnDeleteBook.Enabled =
                 !busy && _currentPage == AdminPage.Books;
 
+            // 회원 관련 버튼
+            btnAddMember.Enabled = !busy && isMemberPage;
+            btnDeleteMember.Enabled = !busy && isMemberPage;
+
             UseWaitCursor = busy;
+        }
+
+        // 신규 회원 등록
+        private async void BtnAddMember_Click(
+            object sender,
+            EventArgs e)
+        {
+            if (_isBusy || _currentPage != AdminPage.Members)
+            {
+                return;
+            }
+
+            using var form = new RegisterForm(true);
+
+            if (form.ShowDialog(this) == DialogResult.OK)
+            {
+                // 검색어도 비우고 전체 회원 목록 표시
+                await ChangePage(AdminPage.Members);
+            }
+        }
+
+        // 선택한 회원 삭제
+        private async void BtnDeleteMember_Click(
+            object sender,
+            EventArgs e)
+        {
+            if (_isBusy || _currentPage != AdminPage.Members)
+            {
+                return;
+            }
+
+            if (dgvBookList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(this, "삭제할 회원을 선택해주세요.");
+                return;
+            }
+
+            var selected = dgvBookList.SelectedRows[0];
+
+            if (!(selected.DataBoundItem is DataRowView rowView))
+            {
+                return;
+            }
+
+            int memberNumber =
+                Convert.ToInt32(rowView.Row["회원번호"]);
+
+            string name =
+                Convert.ToString(rowView.Row["이름"]);
+
+            bool isCurrentMember =
+                _loginMember != null &&
+                _loginMember.MemberNumber == memberNumber;
+
+            string message =
+                $"선택한 회원을 삭제하겠습니까?\n\n" +
+                $"회원번호: {memberNumber}\n이름: {name}";
+
+            if (isCurrentMember)
+            {
+                message +=
+                    "\n\n현재 로그인한 계정입니다.\n" +
+                    "삭제하면 프로그램이 종료됩니다.";
+            }
+
+            DialogResult answer = MessageBox.Show(
+                this,
+                message,
+                "회원 삭제",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+            if (answer != DialogResult.Yes)
+            {
+                return;
+            }
+
+            MemberDeleteResult result;
+
+            SetBusy(true);
+
+            try
+            {
+                result = await _memberRepository.DeleteMember(
+                    memberNumber);
+            }
+            catch (SqlException ex) when (ex.Number == 547)
+            {
+                MessageBox.Show(
+                    this,
+                    "연결된 대출 정보 등이 있어 삭제할 수 없습니다.\n" +
+                    "관련 정보를 확인하고 반납을 먼저 처리해주세요.");
+
+                return;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(
+                    this,
+                    $"회원 삭제에 실패했습니다.\n" +
+                    $"오류 번호: {ex.Number}\n{ex.Message}");
+
+                return;
+            }
+            finally
+            {
+                SetBusy(false);
+            }
+
+            if (result == MemberDeleteResult.HasLoans)
+            {
+                MessageBox.Show(
+                    this,
+                    "대출 중인 도서가 있습니다.\n" +
+                    "반납 처리 후 회원을 삭제해주세요.");
+
+                await LoadListAsync();
+                return;
+            }
+
+            MessageBox.Show(
+                this,
+                result == MemberDeleteResult.Success
+                    ? "회원이 삭제되었습니다."
+                    : "이미 삭제된 회원입니다.");
+
+            if (isCurrentMember)
+            {
+                Close();
+                return;
+            }
+
+            await LoadListAsync();
         }
 
         public AdminMainForm(LoginMember member) : this()
@@ -325,6 +517,8 @@ namespace Book_Management
             {
                 throw new InvalidOperationException("관리자 계정이 아닙니다.");
             }
+
+            _loginMember = member;
 
             adminmain.Text = $"회원명: {member.Name}({member.LoginId})";
         }

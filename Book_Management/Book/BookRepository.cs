@@ -69,9 +69,17 @@ namespace Book_Management.Book
                 case AdminPage.Members:
                     sql = @"
                         SELECT
-                            [회원번호], [이름], [연락처],
-                            [아이디], [회원코드]
-                        FROM dbo.[회원]";
+                            m.[회원번호],
+                            m.[이름],
+                            m.[연락처],
+                            m.[아이디],
+                            m.[회원코드],
+                            (
+                                SELECT COUNT(*)
+                                FROM dbo.[도서] AS b
+                                WHERE b.[대출자] = m.[회원번호]
+                            ) AS [대출현황]
+                        FROM dbo.[회원] AS m";
 
                     orderColumn = "회원번호";
                     break;

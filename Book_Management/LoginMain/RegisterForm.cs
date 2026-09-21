@@ -23,6 +23,7 @@ namespace Book_Management
         public string RegisteredId { get; private set; } = "";
 
 
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -45,6 +46,25 @@ namespace Book_Management
 
             btn_idcheck.Click += Btn_idcheck_Click;
             btn_register.Click += Btn_register_Click;
+
+            FormClosing += (_, e) =>
+            {
+                if (_isBusy)
+                {
+                    e.Cancel = true;
+                }
+            };
+
+        }
+
+        public RegisterForm(bool adminMode) : this()
+        {
+            if (adminMode)
+            {
+                Text = "신규 회원 등록";
+                Title.Text = "신규 회원 등록";
+                btn_register.Text = "등록";
+            }
         }
 
         private void InputBox_TextChanged(object? sender, EventArgs e)
@@ -67,6 +87,7 @@ namespace Book_Management
         {
             if (_isBusy) return;
             string id = Id_input.Text.Trim();
+
 
             if (string.IsNullOrWhiteSpace(id))
             {
@@ -154,6 +175,8 @@ namespace Book_Management
                     return;
 
                 case RegisterResult.DuplicateId:
+                    ResetIdCheck();
+
                     MarkError(Id_input);
                     MessageBox.Show("중복된 아이디입니다.");
                     return;
@@ -164,6 +187,8 @@ namespace Book_Management
 
                     DialogResult = DialogResult.OK;
                     return;
+
+
             }
         }
 
@@ -274,6 +299,7 @@ namespace Book_Management
 
             UseWaitCursor = busy;
         }
+
 
         private void label1_Click(object sender, EventArgs e)
         {

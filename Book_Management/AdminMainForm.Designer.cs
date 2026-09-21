@@ -41,6 +41,8 @@
             this.btnRequestBook = new System.Windows.Forms.Button();
             this.btnDeleteBook = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnAddMember = new System.Windows.Forms.Button();
+            this.btnDeleteMember = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +136,7 @@
             // 
             // btnAddBook
             // 
-            this.btnAddBook.Location = new System.Drawing.Point(617, 70);
+            this.btnAddBook.Location = new System.Drawing.Point(616, 70);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(170, 90);
             this.btnAddBook.TabIndex = 9;
@@ -168,11 +170,33 @@
             this.btnRefresh.Text = "새로고침";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
+            // btnAddMember
+            // 
+            this.btnAddMember.Location = new System.Drawing.Point(618, 70);
+            this.btnAddMember.Name = "btnAddMember";
+            this.btnAddMember.Size = new System.Drawing.Size(170, 134);
+            this.btnAddMember.TabIndex = 9;
+            this.btnAddMember.Text = "신규 회원 등록";
+            this.btnAddMember.UseVisualStyleBackColor = true;
+            this.btnAddMember.Visible = false;
+            // 
+            // btnDeleteMember
+            // 
+            this.btnDeleteMember.Location = new System.Drawing.Point(618, 210);
+            this.btnDeleteMember.Name = "btnDeleteMember";
+            this.btnDeleteMember.Size = new System.Drawing.Size(170, 132);
+            this.btnDeleteMember.TabIndex = 9;
+            this.btnDeleteMember.Text = "회원 탈퇴,삭제";
+            this.btnDeleteMember.UseVisualStyleBackColor = true;
+            this.btnDeleteMember.Visible = false;
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteMember);
+            this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.lPage);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDeleteBook);
@@ -209,5 +233,7 @@
         private System.Windows.Forms.Button btnRequestBook;
         private System.Windows.Forms.Button btnDeleteBook;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnAddMember;
+        private System.Windows.Forms.Button btnDeleteMember;
     }
 }
