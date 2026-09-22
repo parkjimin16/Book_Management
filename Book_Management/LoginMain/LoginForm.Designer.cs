@@ -96,10 +96,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(929, 466);
-            this.Controls.Add(this.btn_register);
-            this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.PW_input);
             this.Controls.Add(this.ID_input);
+            this.Controls.Add(this.PW_input);
+            this.Controls.Add(this.btn_login);
+            this.Controls.Add(this.btn_register);
             this.Controls.Add(this.PW);
             this.Controls.Add(this.ID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

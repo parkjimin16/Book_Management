@@ -270,26 +270,15 @@ namespace Book_Management
         public async Task<MemberDeleteResult> DeleteMember(int memberNumber)
         {
             const string sql = @"
-                DELETE FROM dbo.[회원]
-                WHERE [회원번호] = @MemberNumber
-                  AND NOT EXISTS
-                  (
-                      SELECT 1
-                      FROM dbo.[도서]
-                      WHERE [대출자] = @MemberNumber
-                  );
-
-                SELECT
-                    CASE
-                        WHEN @@ROWCOUNT = 1 THEN 1
-                        WHEN EXISTS
+                DELETE m
+                    FROM dbo.[회원] AS m
+                    WHERE m.[회원번호] = @MemberNumber
+                        AND NOT EXISTS
                         (
                             SELECT 1
-                            FROM dbo.[회원]
-                            WHERE [회원번호] = @MemberNumber
-                        ) THEN -1
-                        ELSE 0
-                    END;";
+                            FROM dbo.[도서] AS b
+                            WHERE b.[대출자] = m.[아이디]
+                        );";
 
             using var connection = new SqlConnection(ConnectionDB);
             await connection.OpenAsync();

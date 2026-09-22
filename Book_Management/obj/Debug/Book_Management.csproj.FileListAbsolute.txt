@@ -107,3 +107,4 @@ C:\Users\admin\Desktop\project\Book_Management\Book_Management\bin\Debug\zh-Hant
 C:\Users\admin\Desktop\project\Book_Management\Book_Management\obj\Debug\Book_Man.2EF232F1.Up2Date
 C:\Users\admin\Desktop\project\Book_Management\Book_Management\obj\Debug\Book_Management.BookModifyForm.resources
 C:\Users\admin\Desktop\project\Book_Management\Book_Management\obj\Debug\Book_Management.MemberEditForm.resources
+C:\Users\admin\Desktop\project\Book_Management\Book_Management\obj\Debug\Book_Management.BookDetailForm.resources

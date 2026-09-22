@@ -15,33 +15,46 @@ namespace Book_Management
         static void Main()
         {
             Application.EnableVisualStyles();
-            using var loginForm = new LoginForm();
+            //using var loginForm = new LoginForm();
             //로그인창 제일 먼저 실행
-            DialogResult result = loginForm.ShowDialog();
-
-            // 로그인하지 않고 창을 닫으면 프로그램 종료
-            if (result != DialogResult.OK)
+            while (true)
             {
-                return;
-            }
+                LoginMember member;
 
-            LoginMember? member = loginForm.CurrentMember;
+                using (var loginForm = new LoginForm())
+                {
+                    if (loginForm.ShowDialog() != DialogResult.OK)
+                    {
+                        return;
+                    }
 
-            if (member == null)
-            {
-                return;
-            }
+                    member = loginForm.CurrentMember;
+                }
 
-            if (member.MemberCode == "01")
-            {
-                using var mainForm = new AdminMainForm(member);
-                Application.Run(mainForm);
-            }
+                if (member == null)
+                {
+                    return;
+                }
 
-            else if (member.MemberCode == "02")
-            {
-                using var mainForm = new UserMainForm(member);
-                Application.Run(mainForm);
+                if (member.MemberCode == "01")
+                {
+                    using var adminForm = new AdminMainForm(member);
+                    Application.Run(adminForm);
+                    return;
+                }
+
+                if (member.MemberCode != "02")
+                {
+                    return;
+                }
+
+                using var userForm = new UserMainForm(member);
+                Application.Run(userForm);
+
+                if (!userForm.LogoutRequested)
+                {
+                    return;
+                }
             }
         }
     }

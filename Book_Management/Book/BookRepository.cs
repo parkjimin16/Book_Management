@@ -77,7 +77,7 @@ namespace Book_Management.Book
                             (
                                 SELECT COUNT(*)
                                 FROM dbo.[도서] AS b
-                                WHERE b.[대출자] = m.[회원번호]
+                                WHERE b.[대출자] = m.[아이디]
                             ) AS [대출현황]
                         FROM dbo.[회원] AS m";
 
