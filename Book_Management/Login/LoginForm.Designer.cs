@@ -106,7 +106,7 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "도서관리-로그인";
+            this.Text = "도서관-로그인";
             this.ResumeLayout(false);
             this.PerformLayout();
 

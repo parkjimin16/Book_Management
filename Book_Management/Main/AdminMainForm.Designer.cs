@@ -43,6 +43,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAddMember = new System.Windows.Forms.Button();
             this.btnDeleteMember = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // lTitle
             // 
             this.lTitle.AutoSize = true;
-            this.lTitle.Location = new System.Drawing.Point(341, 9);
+            this.lTitle.Location = new System.Drawing.Point(374, 9);
             this.lTitle.Name = "lTitle";
             this.lTitle.Size = new System.Drawing.Size(41, 12);
             this.lTitle.TabIndex = 1;
@@ -190,11 +191,21 @@
             this.btnDeleteMember.UseVisualStyleBackColor = true;
             this.btnDeleteMember.Visible = false;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(713, 4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 12;
+            this.btnLogout.Text = "로그아웃";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnDeleteMember);
             this.Controls.Add(this.btnAddMember);
             this.Controls.Add(this.lPage);
@@ -211,7 +222,7 @@
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.adminmain);
             this.Name = "AdminMainForm";
-            this.Text = "AdminMainForm";
+            this.Text = "관리자";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,5 +246,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnAddMember;
         private System.Windows.Forms.Button btnDeleteMember;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

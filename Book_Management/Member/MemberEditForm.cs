@@ -1,13 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Book_Management.MemberData;
 
@@ -30,7 +25,8 @@ namespace Book_Management
             {
                 txtName,
                 txtPhone,
-                txtPw
+                txtPw,
+                txtPwConfirm
             };
 
             foreach (TextBox box in _editableBoxes)
@@ -228,21 +224,6 @@ namespace Book_Management
             btnResetPassword.Enabled = !busy;
 
             UseWaitCursor = busy;
-        }
-
-        private void lTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

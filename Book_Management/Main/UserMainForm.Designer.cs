@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.usermain = new System.Windows.Forms.Label();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +41,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pnlFilters = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.cmbAvailability = new System.Windows.Forms.ComboBox();
@@ -55,26 +56,11 @@
             this.pnlLoanActions = new System.Windows.Forms.Panel();
             this.btnReturn = new System.Windows.Forms.Button();
             this.btnRefreshLoans = new System.Windows.Forms.Button();
-            this.pnlRequest = new System.Windows.Forms.Panel();
-            this.txtRequestPublisher = new System.Windows.Forms.TextBox();
-            this.cmbRequestCategory = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnSaveRequest = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtRequestAuthor = new System.Windows.Forms.TextBox();
-            this.txtRequestIsbn = new System.Windows.Forms.TextBox();
-            this.txtRequestTitle = new System.Windows.Forms.TextBox();
-            this.txtRequestYear = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.pnlFilters.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlList.SuspendLayout();
             this.pnlLoanActions.SuspendLayout();
-            this.pnlRequest.SuspendLayout();
             this.SuspendLayout();
             // 
             // usermain
@@ -162,8 +148,8 @@
             // colDueDate
             // 
             this.colDueDate.DataPropertyName = "반납일";
-            dataGridViewCellStyle8.Format = "yyyy-MM-dd";
-            this.colDueDate.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Format = "yyyy-MM-dd";
+            this.colDueDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.colDueDate.HeaderText = "반납 예정일";
             this.colDueDate.Name = "colDueDate";
             this.colDueDate.ReadOnly = true;
@@ -189,6 +175,7 @@
             // 
             // pnlFilters
             // 
+            this.pnlFilters.Controls.Add(this.label7);
             this.pnlFilters.Controls.Add(this.txtYear);
             this.pnlFilters.Controls.Add(this.txtKeyword);
             this.pnlFilters.Controls.Add(this.cmbAvailability);
@@ -198,19 +185,28 @@
             this.pnlFilters.Name = "pnlFilters";
             this.pnlFilters.Size = new System.Drawing.Size(776, 34);
             this.pnlFilters.TabIndex = 4;
-            this.pnlFilters.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFilters_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(409, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "발행연도";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(418, 4);
+            this.txtYear.Location = new System.Drawing.Point(468, 6);
             this.txtYear.MaxLength = 4;
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(93, 21);
+            this.txtYear.Size = new System.Drawing.Size(111, 21);
             this.txtYear.TabIndex = 1;
             // 
             // txtKeyword
             // 
-            this.txtKeyword.Location = new System.Drawing.Point(94, 3);
+            this.txtKeyword.Location = new System.Drawing.Point(94, 5);
             this.txtKeyword.MaxLength = 200;
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(309, 21);
@@ -220,25 +216,25 @@
             // 
             this.cmbAvailability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAvailability.FormattingEnabled = true;
-            this.cmbAvailability.Location = new System.Drawing.Point(648, 4);
+            this.cmbAvailability.Location = new System.Drawing.Point(701, 7);
             this.cmbAvailability.Name = "cmbAvailability";
-            this.cmbAvailability.Size = new System.Drawing.Size(121, 20);
+            this.cmbAvailability.Size = new System.Drawing.Size(68, 20);
             this.cmbAvailability.TabIndex = 0;
             // 
             // cmbCategory
             // 
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(521, 4);
+            this.cmbCategory.Location = new System.Drawing.Point(585, 7);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 20);
+            this.cmbCategory.Size = new System.Drawing.Size(110, 20);
             this.cmbCategory.TabIndex = 0;
             // 
             // cmbSearchType
             // 
             this.cmbSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSearchType.FormattingEnabled = true;
-            this.cmbSearchType.Location = new System.Drawing.Point(3, 3);
+            this.cmbSearchType.Location = new System.Drawing.Point(3, 6);
             this.cmbSearchType.Name = "cmbSearchType";
             this.cmbSearchType.Size = new System.Drawing.Size(90, 20);
             this.cmbSearchType.TabIndex = 0;
@@ -282,7 +278,6 @@
             // pnlContent
             // 
             this.pnlContent.Controls.Add(this.pnlList);
-            this.pnlContent.Controls.Add(this.pnlRequest);
             this.pnlContent.Location = new System.Drawing.Point(15, 126);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(773, 314);
@@ -297,7 +292,6 @@
             this.pnlList.Name = "pnlList";
             this.pnlList.Size = new System.Drawing.Size(773, 314);
             this.pnlList.TabIndex = 0;
-            this.pnlList.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlList_Paint);
             // 
             // pnlLoanActions
             // 
@@ -327,139 +321,6 @@
             this.btnRefreshLoans.Text = "새로고침";
             this.btnRefreshLoans.UseVisualStyleBackColor = true;
             // 
-            // pnlRequest
-            // 
-            this.pnlRequest.Controls.Add(this.txtRequestPublisher);
-            this.pnlRequest.Controls.Add(this.cmbRequestCategory);
-            this.pnlRequest.Controls.Add(this.label6);
-            this.pnlRequest.Controls.Add(this.label4);
-            this.pnlRequest.Controls.Add(this.label5);
-            this.pnlRequest.Controls.Add(this.label3);
-            this.pnlRequest.Controls.Add(this.label1);
-            this.pnlRequest.Controls.Add(this.btnSaveRequest);
-            this.pnlRequest.Controls.Add(this.label2);
-            this.pnlRequest.Controls.Add(this.txtRequestAuthor);
-            this.pnlRequest.Controls.Add(this.txtRequestIsbn);
-            this.pnlRequest.Controls.Add(this.txtRequestTitle);
-            this.pnlRequest.Controls.Add(this.txtRequestYear);
-            this.pnlRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRequest.Location = new System.Drawing.Point(0, 0);
-            this.pnlRequest.Name = "pnlRequest";
-            this.pnlRequest.Size = new System.Drawing.Size(773, 314);
-            this.pnlRequest.TabIndex = 1;
-            // 
-            // txtRequestPublisher
-            // 
-            this.txtRequestPublisher.Location = new System.Drawing.Point(236, 111);
-            this.txtRequestPublisher.MaxLength = 100;
-            this.txtRequestPublisher.Name = "txtRequestPublisher";
-            this.txtRequestPublisher.Size = new System.Drawing.Size(100, 21);
-            this.txtRequestPublisher.TabIndex = 4;
-            // 
-            // cmbRequestCategory
-            // 
-            this.cmbRequestCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRequestCategory.FormattingEnabled = true;
-            this.cmbRequestCategory.Location = new System.Drawing.Point(236, 165);
-            this.cmbRequestCategory.Name = "cmbRequestCategory";
-            this.cmbRequestCategory.Size = new System.Drawing.Size(100, 20);
-            this.cmbRequestCategory.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(174, 194);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 12);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "ISBN";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(174, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "발행연도";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(174, 168);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "카테고리";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "출판사";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "제목";
-            // 
-            // btnSaveRequest
-            // 
-            this.btnSaveRequest.Location = new System.Drawing.Point(219, 246);
-            this.btnSaveRequest.Name = "btnSaveRequest";
-            this.btnSaveRequest.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveRequest.TabIndex = 5;
-            this.btnSaveRequest.Text = "요청등록";
-            this.btnSaveRequest.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "저자";
-            // 
-            // txtRequestAuthor
-            // 
-            this.txtRequestAuthor.Location = new System.Drawing.Point(236, 84);
-            this.txtRequestAuthor.MaxLength = 100;
-            this.txtRequestAuthor.Name = "txtRequestAuthor";
-            this.txtRequestAuthor.Size = new System.Drawing.Size(100, 21);
-            this.txtRequestAuthor.TabIndex = 4;
-            // 
-            // txtRequestIsbn
-            // 
-            this.txtRequestIsbn.Location = new System.Drawing.Point(236, 191);
-            this.txtRequestIsbn.MaxLength = 13;
-            this.txtRequestIsbn.Name = "txtRequestIsbn";
-            this.txtRequestIsbn.Size = new System.Drawing.Size(100, 21);
-            this.txtRequestIsbn.TabIndex = 4;
-            // 
-            // txtRequestTitle
-            // 
-            this.txtRequestTitle.Location = new System.Drawing.Point(236, 57);
-            this.txtRequestTitle.MaxLength = 200;
-            this.txtRequestTitle.Name = "txtRequestTitle";
-            this.txtRequestTitle.Size = new System.Drawing.Size(100, 21);
-            this.txtRequestTitle.TabIndex = 4;
-            // 
-            // txtRequestYear
-            // 
-            this.txtRequestYear.Location = new System.Drawing.Point(236, 138);
-            this.txtRequestYear.MaxLength = 4;
-            this.txtRequestYear.Name = "txtRequestYear";
-            this.txtRequestYear.Size = new System.Drawing.Size(100, 21);
-            this.txtRequestYear.TabIndex = 4;
-            // 
             // UserMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -475,15 +336,13 @@
             this.Controls.Add(this.lblPage);
             this.Controls.Add(this.pnlContent);
             this.Name = "UserMainForm";
-            this.Text = "UserMainForm";
+            this.Text = "도서관";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.pnlFilters.ResumeLayout(false);
             this.pnlFilters.PerformLayout();
             this.pnlContent.ResumeLayout(false);
             this.pnlList.ResumeLayout(false);
             this.pnlLoanActions.ResumeLayout(false);
-            this.pnlRequest.ResumeLayout(false);
-            this.pnlRequest.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,7 +365,6 @@
         private System.Windows.Forms.ComboBox cmbAvailability;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.ComboBox cmbSearchType;
-        private System.Windows.Forms.Panel pnlRequest;
         private System.Windows.Forms.Panel pnlList;
         private System.Windows.Forms.Panel pnlLoanActions;
         private System.Windows.Forms.Button btnReturn;
@@ -518,18 +376,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLoanStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDueDate;
-        private System.Windows.Forms.TextBox txtRequestAuthor;
-        private System.Windows.Forms.TextBox txtRequestPublisher;
-        private System.Windows.Forms.TextBox txtRequestYear;
-        private System.Windows.Forms.TextBox txtRequestTitle;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbRequestCategory;
-        private System.Windows.Forms.Button btnSaveRequest;
-        private System.Windows.Forms.TextBox txtRequestIsbn;
+        private System.Windows.Forms.Label label7;
     }
 }

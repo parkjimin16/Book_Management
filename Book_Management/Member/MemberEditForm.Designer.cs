@@ -55,7 +55,6 @@
             this.lTitle.Size = new System.Drawing.Size(134, 28);
             this.lTitle.TabIndex = 1;
             this.lTitle.Text = "회원 수정";
-            this.lTitle.Click += new System.EventHandler(this.lTitle_Click);
             // 
             // txtMemberNumber
             // 
@@ -75,7 +74,6 @@
             this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 6;
             this.label1.Text = "회원번호";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -86,7 +84,6 @@
             this.label2.Size = new System.Drawing.Size(49, 19);
             this.label2.TabIndex = 6;
             this.label2.Text = "이름";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtName
             // 
@@ -106,7 +103,6 @@
             this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "연락처";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPhone
             // 
@@ -116,7 +112,6 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(209, 25);
             this.txtPhone.TabIndex = 7;
-            this.txtPhone.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label4
             // 
@@ -127,7 +122,6 @@
             this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "아이디";
-            this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtId
             // 
@@ -138,7 +132,6 @@
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(209, 25);
             this.txtId.TabIndex = 7;
-            this.txtId.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
@@ -149,7 +142,6 @@
             this.label5.Size = new System.Drawing.Size(89, 19);
             this.label5.TabIndex = 6;
             this.label5.Text = "비밀번호";
-            this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPw
             // 
@@ -159,7 +151,6 @@
             this.txtPw.Name = "txtPw";
             this.txtPw.Size = new System.Drawing.Size(173, 25);
             this.txtPw.TabIndex = 7;
-            this.txtPw.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btnResetPassword
             // 
@@ -198,7 +189,6 @@
             this.label6.Size = new System.Drawing.Size(136, 19);
             this.label6.TabIndex = 6;
             this.label6.Text = "비밀번호 확인";
-            this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtPwConfirm
             // 
@@ -208,7 +198,6 @@
             this.txtPwConfirm.Name = "txtPwConfirm";
             this.txtPwConfirm.Size = new System.Drawing.Size(173, 25);
             this.txtPwConfirm.TabIndex = 7;
-            this.txtPwConfirm.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // MemberEditForm
             // 

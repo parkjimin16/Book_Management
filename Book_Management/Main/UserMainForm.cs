@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 
 
@@ -21,7 +16,6 @@ namespace Book_Management
         {
             Search,
             Loans,
-            Request
         }
 
         private static readonly string[] Categories =
@@ -31,7 +25,7 @@ namespace Book_Management
         };
 
         private readonly UserBookRepository _repository = new UserBookRepository();
-        private readonly TextBox[] _requestInputs;
+
         private LoginMember _member;
         private UserPage _currentPage;
         private bool _isBusy;
@@ -43,15 +37,6 @@ namespace Book_Management
         {
             InitializeComponent();
 
-            _requestInputs = new[]
-            {
-                txtRequestTitle,
-                txtRequestAuthor,
-                txtRequestPublisher,
-                txtRequestYear,
-                txtRequestIsbn
-            };
-
             dgvBooks.AutoGenerateColumns = false;
 
             SetComboItems(cmbSearchType, new[] { "통합검색", "제목", "저자", "출판사" }, 0);
@@ -60,22 +45,14 @@ namespace Book_Management
 
             SetComboItems(cmbAvailability, new[] { "가능", "불가능" }, 0);
 
-            SetComboItems(cmbRequestCategory, Categories.Skip(1).ToArray(), -1);
 
             btnSearch.Click += async (_, _) => await Search();
             btnLoans.Click += async (_, _) => await ShowLoans();
 
-            btnRequest.Click += (_, _) =>
-            {
-                if (!_isBusy)
-                {
-                    ShowPage(UserPage.Request);
-                }
-            };
+            btnRequest.Click += BtnRequest_Click;
 
             btnRefreshLoans.Click += async (_, _) => await ShowLoans();
             btnReturn.Click += async (_, _) => await ReturnBook();
-            btnSaveRequest.Click += async (_, _) => await SaveRequest();
 
             btnLogout.Click += (_, _) =>
             {
@@ -97,8 +74,14 @@ namespace Book_Management
                     e.Cancel = true;
                 }
             };
-            // 최초 화면은 검색 화면이며, DB 조회는 하지 않습니다.
+            // 최초 화면을 검색 화면으로 설정합니다.
             ShowPage(UserPage.Search);
+
+            // 로그인 후 사용자 폼이 처음 표시되면 자동으로 검색합니다.
+            Shown += async (_, _) =>
+            {
+                await Search();
+            };
         }
         public UserMainForm(LoginMember member) : this()
         {
@@ -126,31 +109,22 @@ namespace Book_Management
 
             bool isSearch = page == UserPage.Search;
             bool isLoans = page == UserPage.Loans;
-            bool isRequest = page == UserPage.Request;
 
-            pnlList.Visible = !isRequest;
-            pnlRequest.Visible = isRequest;
+            pnlList.Visible = true;
+            pnlList.BringToFront();
 
             pnlLoanActions.Visible = isLoans;
             colDueDate.Visible = isLoans;
 
-            if (isRequest)
-            {
-                pnlRequest.BringToFront();
-                lblPage.Text = "신규 도서 요청";
-            }
-            else
-            {
-                pnlList.BringToFront();
-                lblPage.Text = isSearch ? "검색 결과" : "내 대출 목록";
-            }
+            lblPage.Text = isSearch
+                ? "검색 결과"
+                : "내 대출 목록";
 
-            // 이전 화면의 데이터가 다른 제목 아래 남지 않게 합니다.
             dgvBooks.DataSource = null;
 
             SetMenuColor(btnSearch, isSearch);
             SetMenuColor(btnLoans, isLoans);
-            SetMenuColor(btnRequest, isRequest);
+            SetMenuColor(btnRequest, false);
 
             AcceptButton = isSearch ? btnSearch : null;
 
@@ -208,22 +182,14 @@ namespace Book_Management
             string category = cmbCategory.SelectedItem.ToString();
             bool available = cmbAvailability.SelectedIndex == 0;
 
+            Func<Task<DataTable>> search = () => _repository.Search(mode, keyword, year, category, available);
+
             await Run(async () =>
             {
-                DataTable table = await _repository.Search(
-                    mode,
-                    keyword,
-                    year,
-                    category,
-                    available);
+                DataTable table = await search();
 
-                // 상세 팝업을 닫은 후 동일한 조건으로 갱신합니다.
-                _lastSearch = () => _repository.Search(
-                    mode,
-                    keyword,
-                    year,
-                    category,
-                    available);
+                // 조회에 성공한 조건을 팝업 종료 후 재사용합니다.
+                _lastSearch = search;
 
                 BindBooks(table);
             });
@@ -345,92 +311,26 @@ namespace Book_Management
             });
         }
 
-        private bool ValidateRequest(out BookData book)
+        private void BtnRequest_Click(object sender, EventArgs e)
         {
-            book = null;
-
-            if (_requestInputs.Any(box => string.IsNullOrWhiteSpace(box.Text)) || cmbRequestCategory.SelectedIndex < 0)
-            {
-                MessageBox.Show(
-                    this,
-                    "모든 입력값을 채우고 카테고리를 선택해주세요.");
-
-                return false;
-            }
-
-            if (!short.TryParse(txtRequestYear.Text.Trim(), out short year) || year < 1 || year > 9999)
-            {
-                MessageBox.Show(this, "발행연도는 1~9999로 입력해주세요.");
-                txtRequestYear.Focus();
-                return false;
-            }
-
-            string isbn = txtRequestIsbn.Text.Trim().ToUpperInvariant();
-
-            if (!Regex.IsMatch(
-                isbn,
-                @"\A(?:[0-9]{13}|[0-9]{9}[0-9X])\z"))
-            {
-                MessageBox.Show(
-                    this,
-                    "ISBN은 하이픈 없이 10자리 또는 13자리로 입력해주세요.");
-
-                txtRequestIsbn.Focus();
-                return false;
-            }
-
-            book = new BookData
-            {
-                Title = txtRequestTitle.Text.Trim(),
-                Author = txtRequestAuthor.Text.Trim(),
-                Publisher = txtRequestPublisher.Text.Trim(),
-                PublicationYear = year,
-                Category = cmbRequestCategory.SelectedItem.ToString(),
-                Isbn = isbn
-            };
-
-            return true;
-        }
-
-        private async Task SaveRequest()
-        {
-            if (_isBusy ||
-                _member == null ||
-                _currentPage != UserPage.Request)
+            if (_isBusy || _member == null)
             {
                 return;
             }
 
-            if (!ValidateRequest(out BookData book))
+            SetBusy(true);
+
+            try
             {
-                return;
+                using var form =
+                    new BookModifyForm(isRequestMode: true);
+
+                form.ShowDialog(this);
             }
-
-            await Run(async () =>
+            finally
             {
-                try
-                {
-                    await _repository.Request(book);
-                }
-                catch (SqlException ex)
-                    when (ex.Number == 2601 || ex.Number == 2627)
-                {
-                    MessageBox.Show(
-                        this,
-                        "같은 ISBN의 신규 도서 요청이 이미 등록되어 있습니다.");
-
-                    return;
-                }
-
-                MessageBox.Show(this, "신규 도서 요청이 등록되었습니다.");
-
-                foreach (TextBox input in _requestInputs)
-                {
-                    input.Clear();
-                }
-
-                cmbRequestCategory.SelectedIndex = -1;
-            });
+                SetBusy(false);
+            }
         }
 
         private async Task Run(Func<Task> action)
@@ -473,17 +373,6 @@ namespace Book_Management
             pnlContent.Enabled = !busy;
 
             UseWaitCursor = busy;
-        }
-
-
-        private void pnlFilters_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlList_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using static Book_Management.MemberData;
 
@@ -31,8 +28,8 @@ namespace Book_Management
 
             const string sql = """
                 SELECT COUNT(*)
-                FROM dbo.[회원]
-                WHERE [아이디] = @Id;
+                FROM dbo.[Members]
+                WHERE [LoginId] = @Id;
                 """;
 
             using var command = new SqlCommand(sql, connection);
@@ -52,8 +49,8 @@ namespace Book_Management
 
             const string sql = """
                 SELECT COUNT(*)
-                FROM dbo.[회원]
-                WHERE [연락처] = @Phone;
+                FROM dbo.[Members]
+                WHERE [Phone] = @Phone;
                 """;
 
             using var command = new SqlCommand(sql, connection);
@@ -77,13 +74,13 @@ namespace Book_Management
 
             const string sql = """
                 SELECT
-                    [회원번호],
-                    [이름],
-                    [아이디],
-                    [비밀번호],
-                    [회원코드]
-                FROM dbo.[회원]
-                WHERE [아이디] = @Id;
+                    [MemberNumber] AS [회원번호],
+                    [Name] AS [이름],
+                    [LoginId] AS [아이디],
+                    [Password] AS [비밀번호],
+                    [MemberCode] AS [회원코드]
+                FROM dbo.[Members]
+                WHERE [LoginId] = @Id;
                 """;
 
             using var command = new SqlCommand(sql, connection);
@@ -147,13 +144,13 @@ namespace Book_Management
                 const string sql = """
                     SET ARITHABORT ON;
 
-                    INSERT INTO dbo.[회원]
+                    INSERT INTO dbo.[Members]
                     (
-                        [이름],
-                        [연락처],
-                        [아이디],
-                        [비밀번호],
-                        [회원코드]
+                        [Name],
+                        [Phone],
+                        [LoginId],
+                        [Password],
+                        [MemberCode]
                     )
                     VALUES
                     (
@@ -210,26 +207,26 @@ namespace Book_Management
                 IF EXISTS
                 (
                     SELECT 1
-                    FROM dbo.[회원]
-                    WHERE [연락처] = @Phone
-                      AND [회원번호] <> @MemberNumber
+                    FROM dbo.[Members]
+                    WHERE [Phone] = @Phone
+                      AND [MemberNumber] <> @MemberNumber
                 )
                 BEGIN
                     SELECT -1;
                 END
                 ELSE
                 BEGIN
-                    UPDATE dbo.[회원]
+                    UPDATE dbo.[Members]
                     SET
-                        [이름] = @Name,
-                        [연락처] = @Phone,
-                        [비밀번호] =
+                        [Name] = @Name,
+                        [Phone] = @Phone,
+                        [Password] =
                             CASE
                                 WHEN @Password IS NULL
-                                    THEN [비밀번호]
+                                    THEN [Password]
                                 ELSE @Password
                             END
-                    WHERE [회원번호] = @MemberNumber;
+                    WHERE [MemberNumber] = @MemberNumber;
 
                     SELECT @@ROWCOUNT;
                 END;";
@@ -270,15 +267,39 @@ namespace Book_Management
         public async Task<MemberDeleteResult> DeleteMember(int memberNumber)
         {
             const string sql = @"
+                SET NOCOUNT ON;
+
                 DELETE m
-                    FROM dbo.[회원] AS m
-                    WHERE m.[회원번호] = @MemberNumber
-                        AND NOT EXISTS
-                        (
-                            SELECT 1
-                            FROM dbo.[도서] AS b
-                            WHERE b.[대출자] = m.[아이디]
-                        );";
+                FROM dbo.[Members] AS m
+                WHERE m.[MemberNumber] = @MemberNumber
+                  AND NOT EXISTS
+                  (
+                      SELECT 1
+                      FROM dbo.[Books] AS b
+                      WHERE b.[BorrowerLoginId] = m.[LoginId]
+                  );
+
+                DECLARE @DeletedCount INT = @@ROWCOUNT;
+
+                IF @DeletedCount = 1
+                BEGIN
+                    SELECT 1;
+                END
+                ELSE IF EXISTS
+                (
+                    SELECT 1
+                    FROM dbo.[Members] AS m
+                    INNER JOIN dbo.[Books] AS b
+                        ON b.[BorrowerLoginId] = m.[LoginId]
+                    WHERE m.[MemberNumber] = @MemberNumber
+                )
+                BEGIN
+                    SELECT -1;
+                END
+                ELSE
+                BEGIN
+                    SELECT 0;
+                END;";
 
             using var connection = new SqlConnection(ConnectionDB);
             await connection.OpenAsync();

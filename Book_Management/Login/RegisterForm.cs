@@ -299,36 +299,5 @@ namespace Book_Management
 
             UseWaitCursor = busy;
         }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RegisterForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_register_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Name_input_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

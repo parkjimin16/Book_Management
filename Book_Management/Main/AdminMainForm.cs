@@ -1,12 +1,7 @@
 ﻿using Book_Management.Book;
 using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Book_Management.MemberData;
@@ -17,11 +12,12 @@ namespace Book_Management
 {
     public partial class AdminMainForm : Form
     {
-        private readonly BookRepository _repository = new BookRepository();
+        private readonly AdminBookRepository _repository = new AdminBookRepository();
         private readonly MemberRepository _memberRepository = new MemberRepository();
         private LoginMember _loginMember;
         private AdminPage _currentPage = AdminPage.Books;
         private bool _isBusy;
+        public bool LogoutRequested { get; private set; }
 
         public AdminMainForm()
         {
@@ -59,6 +55,17 @@ namespace Book_Management
                 await LoadListAsync();
             };
 
+            btnLogout.Click += (_, _) =>
+            {
+                if (_isBusy)
+                {
+                    return;
+                }
+
+                LogoutRequested = true;
+                Close();
+            };
+
             txtSearch.KeyDown += TxtSearch_KeyDown;
 
             btnAddBook.Click += BtnAddBook_Click;
@@ -92,7 +99,7 @@ namespace Book_Management
             txtSearch.Clear();
 
             cmbSearchColumn.Items.Clear();
-            cmbSearchColumn.Items.AddRange(BookRepository.GetSearchColumns(page));
+            cmbSearchColumn.Items.AddRange(AdminBookRepository.GetSearchColumns(page));
 
             cmbSearchColumn.SelectedIndex = 0;
 
@@ -209,6 +216,16 @@ namespace Book_Management
 
             string title = Convert.ToString(rowView.Row["제목"]);
 
+            if (!Convert.ToBoolean(rowView.Row["대출가능여부"]))
+            {
+                MessageBox.Show(
+                    this,
+                    "대출 중인 도서는 삭제할 수 없습니다.\n" +
+                    "반납 후 다시 시도해주세요.");
+
+                return;
+            }
+
             DialogResult answer = MessageBox.Show(
                 this,
                 $"선택한 도서를 삭제하겠습니까?\n\n" +
@@ -261,9 +278,7 @@ namespace Book_Management
                 return;
             }
 
-            if (e.RowIndex < 0 ||
-                e.ColumnIndex < 0 ||
-                e.Button != MouseButtons.Left)
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 || e.Button != MouseButtons.Left)
             {
                 return;
             }
@@ -309,9 +324,33 @@ namespace Book_Management
                 return;
             }
 
-            // 도서 관리 화면에서만 도서 수정
+            // 신규 도서 요청 → 값이 채워진 읽기 전용 등록 팝업
+            if (_currentPage == AdminPage.Requests)
+            {
+                using var requestForm = new BookModifyForm(row);
+
+                if (requestForm.ShowDialog(this) == DialogResult.OK)
+                {
+                    // 처리된 요청이 목록에서 사라지도록 새로 조회합니다.
+                    await LoadListAsync();
+                }
+
+                return;
+            }
+
             if (_currentPage != AdminPage.Books)
             {
+                return;
+            }
+
+            // 대출 중인 도서는 수정 팝업을 열지 않습니다.
+            if (!Convert.ToBoolean(row["대출가능여부"]))
+            {
+                MessageBox.Show(
+                    this,
+                    "대출 중인 도서는 수정하거나 삭제할 수 없습니다.\n" +
+                    "반납 후 다시 시도해주세요.");
+
                 return;
             }
 
@@ -341,6 +380,7 @@ namespace Book_Management
         private void SetBusy(bool busy)
         {
             _isBusy = busy;
+            btnLogout.Enabled = !busy;
 
             bool isMemberPage =
                 _currentPage == AdminPage.Members;
@@ -367,8 +407,7 @@ namespace Book_Management
             btnAddBook.Enabled = !busy && !isMemberPage;
             btnRequestBook.Enabled = !busy && !isMemberPage;
 
-            btnDeleteBook.Enabled =
-                !busy && _currentPage == AdminPage.Books;
+            btnDeleteBook.Enabled = !busy && _currentPage == AdminPage.Books;
 
             // 회원 관련 버튼
             btnAddMember.Enabled = !busy && isMemberPage;

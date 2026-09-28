@@ -83,7 +83,6 @@
             this.Phone.Size = new System.Drawing.Size(61, 23);
             this.Phone.TabIndex = 0;
             this.Phone.Text = "연락처";
-            this.Phone.Click += new System.EventHandler(this.label1_Click);
             // 
             // Phone_input
             // 
@@ -93,7 +92,6 @@
             this.Phone_input.Name = "Phone_input";
             this.Phone_input.Size = new System.Drawing.Size(139, 32);
             this.Phone_input.TabIndex = 1;
-            this.Phone_input.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Id
             // 
@@ -104,7 +102,6 @@
             this.Id.Size = new System.Drawing.Size(61, 23);
             this.Id.TabIndex = 0;
             this.Id.Text = "아이디";
-            this.Id.Click += new System.EventHandler(this.label1_Click);
             // 
             // Id_input
             // 
@@ -114,7 +111,6 @@
             this.Id_input.Name = "Id_input";
             this.Id_input.Size = new System.Drawing.Size(139, 32);
             this.Id_input.TabIndex = 1;
-            this.Id_input.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Pw
             // 
@@ -125,7 +121,6 @@
             this.Pw.Size = new System.Drawing.Size(78, 23);
             this.Pw.TabIndex = 0;
             this.Pw.Text = "비밀번호";
-            this.Pw.Click += new System.EventHandler(this.label1_Click);
             // 
             // Pw_input
             // 
@@ -136,7 +131,6 @@
             this.Pw_input.Size = new System.Drawing.Size(139, 32);
             this.Pw_input.TabIndex = 1;
             this.Pw_input.UseSystemPasswordChar = true;
-            this.Pw_input.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Id_check_mark
             // 
@@ -160,7 +154,6 @@
             this.CheckPw.Size = new System.Drawing.Size(124, 23);
             this.CheckPw.TabIndex = 0;
             this.CheckPw.Text = "비밀번호 확인";
-            this.CheckPw.Click += new System.EventHandler(this.label1_Click);
             // 
             // CheckPw_input
             // 
@@ -171,7 +164,6 @@
             this.CheckPw_input.Size = new System.Drawing.Size(139, 32);
             this.CheckPw_input.TabIndex = 1;
             this.CheckPw_input.UseSystemPasswordChar = true;
-            this.CheckPw_input.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btn_register
             // 
@@ -182,7 +174,6 @@
             this.btn_register.TabIndex = 4;
             this.btn_register.Text = "회원가입";
             this.btn_register.UseVisualStyleBackColor = true;
-            this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // btn_cancel
             // 
@@ -194,7 +185,6 @@
             this.btn_cancel.TabIndex = 4;
             this.btn_cancel.Text = "취소";
             this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_idcheck
             // 
@@ -238,7 +228,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "회원가입";
-            this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

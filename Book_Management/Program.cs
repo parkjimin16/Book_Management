@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Book_Management
@@ -40,7 +37,13 @@ namespace Book_Management
                 {
                     using var adminForm = new AdminMainForm(member);
                     Application.Run(adminForm);
-                    return;
+
+                    if (!adminForm.LogoutRequested)
+                    {
+                        return;
+                    }
+
+                    continue;
                 }
 
                 if (member.MemberCode != "02")

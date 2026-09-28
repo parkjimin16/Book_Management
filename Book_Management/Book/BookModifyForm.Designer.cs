@@ -60,7 +60,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(59, 144);
+            this.label1.Location = new System.Drawing.Point(59, 124);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(59, 184);
+            this.label2.Location = new System.Drawing.Point(59, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 19);
             this.label2.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(59, 222);
+            this.label3.Location = new System.Drawing.Point(59, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 1;
@@ -90,7 +90,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(59, 257);
+            this.label4.Location = new System.Drawing.Point(59, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 19);
             this.label4.TabIndex = 1;
@@ -100,7 +100,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(59, 289);
+            this.label5.Location = new System.Drawing.Point(59, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 19);
             this.label5.TabIndex = 1;
@@ -110,12 +110,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("돋움", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(62, 328);
+            this.label6.Location = new System.Drawing.Point(62, 307);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 19);
             this.label6.TabIndex = 1;
             this.label6.Text = "ISBN";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnDelete
             // 
@@ -148,7 +147,7 @@
             // txtTitle
             // 
             this.txtTitle.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtTitle.Location = new System.Drawing.Point(165, 138);
+            this.txtTitle.Location = new System.Drawing.Point(165, 119);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(209, 25);
             this.txtTitle.TabIndex = 5;
@@ -156,7 +155,7 @@
             // txtAuthor
             // 
             this.txtAuthor.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtAuthor.Location = new System.Drawing.Point(164, 178);
+            this.txtAuthor.Location = new System.Drawing.Point(164, 157);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(209, 25);
             this.txtAuthor.TabIndex = 5;
@@ -164,7 +163,7 @@
             // txtPublisher
             // 
             this.txtPublisher.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtPublisher.Location = new System.Drawing.Point(164, 216);
+            this.txtPublisher.Location = new System.Drawing.Point(164, 195);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(209, 25);
             this.txtPublisher.TabIndex = 5;
@@ -172,7 +171,7 @@
             // txtYear
             // 
             this.txtYear.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtYear.Location = new System.Drawing.Point(165, 251);
+            this.txtYear.Location = new System.Drawing.Point(165, 231);
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(209, 25);
             this.txtYear.TabIndex = 5;
@@ -194,7 +193,7 @@
             "언어",
             "문학",
             "역사"});
-            this.cmbCategory.Location = new System.Drawing.Point(164, 285);
+            this.cmbCategory.Location = new System.Drawing.Point(164, 269);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(209, 23);
             this.cmbCategory.TabIndex = 6;
@@ -202,7 +201,7 @@
             // txtIsbn
             // 
             this.txtIsbn.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtIsbn.Location = new System.Drawing.Point(165, 323);
+            this.txtIsbn.Location = new System.Drawing.Point(165, 304);
             this.txtIsbn.Name = "txtIsbn";
             this.txtIsbn.Size = new System.Drawing.Size(208, 25);
             this.txtIsbn.TabIndex = 5;
@@ -214,15 +213,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(444, 611);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.txtAuthor);
+            this.Controls.Add(this.txtPublisher);
+            this.Controls.Add(this.txtYear);
             this.Controls.Add(this.cmbCategory);
             this.Controls.Add(this.txtIsbn);
-            this.Controls.Add(this.txtYear);
-            this.Controls.Add(this.txtPublisher);
-            this.Controls.Add(this.txtAuthor);
-            this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
