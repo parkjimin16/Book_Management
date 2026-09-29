@@ -398,7 +398,7 @@ namespace Book_Management
                 }
 
                 registered =
-                    await _repository.RegisterRequestedBookAsync(_requestIsbn);
+                    await _repository.RegisterRequestedBook(_requestIsbn);
             }
             catch (SqlException ex)
                 when (ex.Number == 2601 || ex.Number == 2627)

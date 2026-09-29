@@ -244,7 +244,7 @@ namespace Book_Management.Book
 
             return await command.ExecuteNonQueryAsync();
         }
-        public async Task<bool> RegisterRequestedBookAsync(string isbn)
+        public async Task<bool> RegisterRequestedBook(string isbn)
         {
             if (string.IsNullOrWhiteSpace(isbn))
             {

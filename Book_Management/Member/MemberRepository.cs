@@ -26,11 +26,11 @@ namespace Book_Management
 
             await connection.OpenAsync();
 
-            const string sql = """
+            const string sql = @"
                 SELECT COUNT(*)
                 FROM dbo.[Members]
                 WHERE [LoginId] = @Id;
-                """;
+                ";
 
             using var command = new SqlCommand(sql, connection);
 
@@ -47,11 +47,10 @@ namespace Book_Management
 
             await connection.OpenAsync();
 
-            const string sql = """
+            const string sql = @"
                 SELECT COUNT(*)
                 FROM dbo.[Members]
-                WHERE [Phone] = @Phone;
-                """;
+                WHERE [Phone] = @Phone;";
 
             using var command = new SqlCommand(sql, connection);
 
@@ -72,7 +71,7 @@ namespace Book_Management
 
             await connection.OpenAsync();
 
-            const string sql = """
+            const string sql = @"
                 SELECT
                     [MemberNumber] AS [회원번호],
                     [Name] AS [이름],
@@ -80,8 +79,7 @@ namespace Book_Management
                     [Password] AS [비밀번호],
                     [MemberCode] AS [회원코드]
                 FROM dbo.[Members]
-                WHERE [LoginId] = @Id;
-                """;
+                WHERE [LoginId] = @Id;";
 
             using var command = new SqlCommand(sql, connection);
 
@@ -141,7 +139,7 @@ namespace Book_Management
 
                 await connection.OpenAsync();
 
-                const string sql = """
+                const string sql = @"
                     SET ARITHABORT ON;
 
                     INSERT INTO dbo.[Members]
@@ -159,8 +157,7 @@ namespace Book_Management
                         @Id,
                         @Password,
                         '02'
-                    );
-                    """;
+                    );";
 
                 using var command = new SqlCommand(sql, connection);
 
