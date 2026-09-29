@@ -1,0 +1,347 @@
+﻿[
+    {
+        "BookNumber":  1,
+        "Before":  "홍길동 지음",
+        "After":  "홍길동"
+    },
+    {
+        "BookNumber":  3,
+        "Before":  "루키우스 안나이우스 세네카 지음, 하와이 대저택 편역",
+        "After":  "루키우스 안나이우스 세네카, 하와이 대저택"
+    },
+    {
+        "BookNumber":  10,
+        "Before":  "김혜영 지음",
+        "After":  "김혜영"
+    },
+    {
+        "BookNumber":  11,
+        "Before":  "백덕수 지음",
+        "After":  "백덕수"
+    },
+    {
+        "BookNumber":  12,
+        "Before":  "박완서 지음, 호원숙 엮음",
+        "After":  "박완서, 호원숙"
+    },
+    {
+        "BookNumber":  13,
+        "Before":  "양귀자 지음",
+        "After":  "양귀자"
+    },
+    {
+        "BookNumber":  14,
+        "Before":  "프랑수아즈 사강 지음, 김남주 옮김",
+        "After":  "프랑수아즈 사강, 김남주"
+    },
+    {
+        "BookNumber":  15,
+        "Before":  "유래혁 지음",
+        "After":  "유래혁"
+    },
+    {
+        "BookNumber":  16,
+        "Before":  "김애란 지음",
+        "After":  "김애란"
+    },
+    {
+        "BookNumber":  17,
+        "Before":  "고요엘 지음",
+        "After":  "고요엘"
+    },
+    {
+        "BookNumber":  18,
+        "Before":  "헤르만 헤세 지음, 전영애 옮김",
+        "After":  "헤르만 헤세, 전영애"
+    },
+    {
+        "BookNumber":  19,
+        "Before":  "김기수 그림, 김정욱 글, 멜로우 TV 외 원작",
+        "After":  "김기수, 김정욱, 멜로우 TV"
+    },
+    {
+        "BookNumber":  20,
+        "Before":  "앨런 레비 지음, 노지양 옮김",
+        "After":  "앨런 레비, 노지양"
+    },
+    {
+        "BookNumber":  21,
+        "Before":  "아르투어 쇼펜하우어 지음, 김지민 엮음",
+        "After":  "아르투어 쇼펜하우어, 김지민"
+    },
+    {
+        "BookNumber":  22,
+        "Before":  "송길영 지음",
+        "After":  "송길영"
+    },
+    {
+        "BookNumber":  23,
+        "Before":  "알베르 카뮈 지음, 김화영 옮김",
+        "After":  "알베르 카뮈, 김화영"
+    },
+    {
+        "BookNumber":  24,
+        "Before":  "조예은 지음",
+        "After":  "조예은"
+    },
+    {
+        "BookNumber":  25,
+        "Before":  "홍종현 그림, 박송이 글, 이승현 감수, 에그박사 원작",
+        "After":  "홍종현, 박송이, 이승현, 에그박사"
+    },
+    {
+        "BookNumber":  26,
+        "Before":  "신이원 지음",
+        "After":  "신이원"
+    },
+    {
+        "BookNumber":  27,
+        "Before":  "이진우 지음",
+        "After":  "이진우"
+    },
+    {
+        "BookNumber":  28,
+        "Before":  "정태익 외 지음",
+        "After":  "정태익"
+    },
+    {
+        "BookNumber":  29,
+        "Before":  "신종호.김윤정 지음",
+        "After":  "신종호.김윤정"
+    },
+    {
+        "BookNumber":  30,
+        "Before":  "정지아 지음",
+        "After":  "정지아"
+    },
+    {
+        "BookNumber":  31,
+        "Before":  "조아란.권희.이정윤 지음",
+        "After":  "조아란.권희.이정윤"
+    },
+    {
+        "BookNumber":  32,
+        "Before":  "프리드리히 니체 지음, 김철 편역",
+        "After":  "프리드리히 니체, 김철"
+    },
+    {
+        "BookNumber":  33,
+        "Before":  "아게도리도리 지음, 박재현 옮김, 장홍제 감수",
+        "After":  "아게도리도리, 박재현, 장홍제"
+    },
+    {
+        "BookNumber":  34,
+        "Before":  "김난도 외 지음",
+        "After":  "김난도"
+    },
+    {
+        "BookNumber":  35,
+        "Before":  "최태성 지음",
+        "After":  "최태성"
+    },
+    {
+        "BookNumber":  36,
+        "Before":  "정수영 그림, 한바리 글, 김선 감수, 백앤아.고고프렌즈 원작",
+        "After":  "정수영, 한바리, 김선, 백앤아.고고프렌즈"
+    },
+    {
+        "BookNumber":  37,
+        "Before":  "사라 베이크웰 지음, 조영 옮김",
+        "After":  "사라 베이크웰, 조영"
+    },
+    {
+        "BookNumber":  38,
+        "Before":  "홍성윤 지음",
+        "After":  "홍성윤"
+    },
+    {
+        "BookNumber":  39,
+        "Before":  "다자이 오사무 지음, 김춘미 옮김",
+        "After":  "다자이 오사무, 김춘미"
+    },
+    {
+        "BookNumber":  40,
+        "Before":  "박주환 지음",
+        "After":  "박주환"
+    },
+    {
+        "BookNumber":  41,
+        "Before":  "김재현.이건 지음",
+        "After":  "김재현.이건"
+    },
+    {
+        "BookNumber":  42,
+        "Before":  "조정래 지음",
+        "After":  "조정래"
+    },
+    {
+        "BookNumber":  43,
+        "Before":  "Yuji Iwasaki 지음, 이정운 옮김, 아쿠타미 게게 원작",
+        "After":  "Yuji Iwasaki, 이정운, 아쿠타미 게게"
+    },
+    {
+        "BookNumber":  44,
+        "Before":  "내셔널지오그래픽 키즈 지음, 이한음.김아림 옮김",
+        "After":  "내셔널지오그래픽 키즈, 이한음.김아림"
+    },
+    {
+        "BookNumber":  45,
+        "Before":  "재레드 다이아몬드 지음, 강주헌 옮김",
+        "After":  "재레드 다이아몬드, 강주헌"
+    },
+    {
+        "BookNumber":  46,
+        "Before":  "PEACH-PIT 지음, 김수연 옮김",
+        "After":  "PEACH-PIT, 김수연"
+    },
+    {
+        "BookNumber":  47,
+        "Before":  "최태성 지음",
+        "After":  "최태성"
+    },
+    {
+        "BookNumber":  48,
+        "Before":  "조현 지음",
+        "After":  "조현"
+    },
+    {
+        "BookNumber":  49,
+        "Before":  "란자이 굴라티 지음, 박영준 옮김",
+        "After":  "란자이 굴라티, 박영준"
+    },
+    {
+        "BookNumber":  50,
+        "Before":  "찰리 스미스 지음",
+        "After":  "찰리 스미스"
+    },
+    {
+        "BookNumber":  51,
+        "Before":  "최태성 지음",
+        "After":  "최태성"
+    },
+    {
+        "BookNumber":  52,
+        "Before":  "안톤 파블로비치 체홉 지음, 박현섭 옮김",
+        "After":  "안톤 파블로비치 체홉, 박현섭"
+    },
+    {
+        "BookNumber":  53,
+        "Before":  "필립 K. 딕 지음, 박중서 외 옮김",
+        "After":  "필립 K. 딕, 박중서"
+    },
+    {
+        "BookNumber":  54,
+        "Before":  "송희구 지음",
+        "After":  "송희구"
+    },
+    {
+        "BookNumber":  55,
+        "Before":  "칼 세이건 지음, 홍승수 옮김",
+        "After":  "칼 세이건, 홍승수"
+    },
+    {
+        "BookNumber":  56,
+        "Before":  "쓰리포 그림, 안경순 글, 멜로우 TV 원작",
+        "After":  "쓰리포, 안경순, 멜로우 TV"
+    },
+    {
+        "BookNumber":  57,
+        "Before":  "제임스 클리어 지음, 이한이 옮김",
+        "After":  "제임스 클리어, 이한이"
+    },
+    {
+        "BookNumber":  58,
+        "Before":  "조남주 지음",
+        "After":  "조남주"
+    },
+    {
+        "BookNumber":  59,
+        "Before":  "전용문.박현민 지음",
+        "After":  "전용문.박현민"
+    },
+    {
+        "BookNumber":  60,
+        "Before":  "김승옥 지음",
+        "After":  "김승옥"
+    },
+    {
+        "BookNumber":  61,
+        "Before":  "최설희 지음, 한현동 그림, 정수영 구성",
+        "After":  "최설희, 한현동, 정수영"
+    },
+    {
+        "BookNumber":  62,
+        "Before":  "이인현 지음",
+        "After":  "이인현"
+    },
+    {
+        "BookNumber":  63,
+        "Before":  "김연수 지음",
+        "After":  "김연수"
+    },
+    {
+        "BookNumber":  64,
+        "Before":  "ETS 지음",
+        "After":  "ETS"
+    },
+    {
+        "BookNumber":  65,
+        "Before":  "스콧 애덤스 지음, 김인수 옮김",
+        "After":  "스콧 애덤스, 김인수"
+    },
+    {
+        "BookNumber":  66,
+        "Before":  "제인 오스틴 지음",
+        "After":  "제인 오스틴"
+    },
+    {
+        "BookNumber":  67,
+        "Before":  "사노 유토 지음",
+        "After":  "사노 유토"
+    },
+    {
+        "BookNumber":  68,
+        "Before":  "김수현 지음",
+        "After":  "김수현"
+    },
+    {
+        "BookNumber":  69,
+        "Before":  "고명환 지음",
+        "After":  "고명환"
+    },
+    {
+        "BookNumber":  70,
+        "Before":  "ETS 엮음",
+        "After":  "ETS"
+    },
+    {
+        "BookNumber":  71,
+        "Before":  "PEACH-PIT 지음, 김수연 옮김",
+        "After":  "PEACH-PIT, 김수연"
+    },
+    {
+        "BookNumber":  72,
+        "Before":  "한로로 (HANRORO) 지음",
+        "After":  "한로로 (HANRORO)"
+    },
+    {
+        "BookNumber":  73,
+        "Before":  "호메로스 지음, 천병희 옮김",
+        "After":  "호메로스, 천병희"
+    },
+    {
+        "BookNumber":  74,
+        "Before":  "大明 이석진 지음",
+        "After":  "大明 이석진"
+    },
+    {
+        "BookNumber":  75,
+        "Before":  "구병모 지음",
+        "After":  "구병모"
+    },
+    {
+        "BookNumber":  76,
+        "Before":  "김경일 지음",
+        "After":  "김경일"
+    }
+]

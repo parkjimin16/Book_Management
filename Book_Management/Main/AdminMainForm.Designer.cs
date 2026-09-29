@@ -61,9 +61,9 @@
             this.lTitle.AutoSize = true;
             this.lTitle.Location = new System.Drawing.Point(374, 9);
             this.lTitle.Name = "lTitle";
-            this.lTitle.Size = new System.Drawing.Size(41, 12);
+            this.lTitle.Size = new System.Drawing.Size(65, 12);
             this.lTitle.TabIndex = 1;
-            this.lTitle.Text = "도서관";
+            this.lTitle.Text = "ZDA도서관";
             // 
             // lPage
             // 
@@ -221,7 +221,9 @@
             this.Controls.Add(this.btnBooks);
             this.Controls.Add(this.lTitle);
             this.Controls.Add(this.adminmain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "관리자";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBookList)).EndInit();
             this.ResumeLayout(false);

@@ -100,9 +100,7 @@ namespace Book_Management
                 FROM dbo.[Books]
                 WHERE [BookNumber] = @BookNumber;";
 
-            DataTable table = await Query(
-                sql,
-                P("@BookNumber", SqlDbType.Int, bookNumber));
+            DataTable table = await Query(sql, P("@BookNumber", SqlDbType.Int, bookNumber));
 
             return table.Rows.Count == 0 ? null : table.Rows[0];
         }
@@ -135,10 +133,7 @@ namespace Book_Management
 
                 SELECT [DueDate] FROM @Borrowed;";
 
-            object result = await Scalar(
-                sql,
-                P("@BookNumber", SqlDbType.Int, bookNumber),
-                P("@LoginId", SqlDbType.NVarChar, loginId, 50));
+            object result = await Scalar(sql, P("@BookNumber", SqlDbType.Int, bookNumber), P("@LoginId", SqlDbType.NVarChar, loginId, 50));
 
             if (result == null || result == DBNull.Value)
             {
@@ -157,9 +152,7 @@ namespace Book_Management
                   AND [IsAvailable] = 0
                 ORDER BY [DueDate], [BookNumber];";
 
-            return Query(
-                sql,
-                P("@LoginId", SqlDbType.NVarChar, loginId, 50));
+            return Query(sql, P("@LoginId", SqlDbType.NVarChar, loginId, 50));
         }
 
         public async Task<bool> Return(int bookNumber, string loginId)
@@ -178,10 +171,7 @@ namespace Book_Management
 
                 SELECT @@ROWCOUNT;";
 
-            object result = await Scalar(
-                sql,
-                P("@BookNumber", SqlDbType.Int, bookNumber),
-                P("@LoginId", SqlDbType.NVarChar, loginId, 50));
+            object result = await Scalar(sql, P("@BookNumber", SqlDbType.Int, bookNumber), P("@LoginId", SqlDbType.NVarChar, loginId, 50));
 
             return Convert.ToInt32(result) == 1;
         }
@@ -212,7 +202,7 @@ namespace Book_Management
                 P("@Isbn", SqlDbType.VarChar, book.Isbn, 13));
         }
 
-        private static SqlParameter P(string name, SqlDbType type, object value, int size = 0)
+        private static SqlParameter P(string name, SqlDbType type, object value, int size = 0) //파라미터 생성 보조 메서드
         {
             var parameter = new SqlParameter(name, type)
             {

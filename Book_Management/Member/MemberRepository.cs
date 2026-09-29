@@ -117,11 +117,7 @@ namespace Book_Management
         }
 
         // 회원가입
-        public async Task<RegisterResult> Register(
-            string name,
-            string phone,
-            string id,
-            string password)
+        public async Task<RegisterResult> Register(string name, string phone, string id, string password)
         {
             if (await IsPhoneExists(phone))
             {
@@ -192,11 +188,7 @@ namespace Book_Management
         }
 
         // 회원 정보 수정
-        public async Task<MemberUpdateResult> UpdateMember(
-            int memberNumber,
-            string name,
-            string phone,
-            string newPassword)
+        public async Task<MemberUpdateResult> UpdateMember(int memberNumber, string name, string phone, string newPassword)
         {
             const string sql = @"
                 SET ARITHABORT ON;

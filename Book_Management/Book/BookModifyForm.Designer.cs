@@ -148,6 +148,7 @@
             // 
             this.txtTitle.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtTitle.Location = new System.Drawing.Point(165, 119);
+            this.txtTitle.MaxLength = 200;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(209, 25);
             this.txtTitle.TabIndex = 5;
@@ -156,6 +157,7 @@
             // 
             this.txtAuthor.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtAuthor.Location = new System.Drawing.Point(164, 157);
+            this.txtAuthor.MaxLength = 100;
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(209, 25);
             this.txtAuthor.TabIndex = 5;
@@ -164,6 +166,7 @@
             // 
             this.txtPublisher.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPublisher.Location = new System.Drawing.Point(164, 195);
+            this.txtPublisher.MaxLength = 100;
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(209, 25);
             this.txtPublisher.TabIndex = 5;
@@ -172,6 +175,7 @@
             // 
             this.txtYear.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtYear.Location = new System.Drawing.Point(165, 231);
+            this.txtYear.MaxLength = 4;
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(209, 25);
             this.txtYear.TabIndex = 5;
@@ -202,6 +206,7 @@
             // 
             this.txtIsbn.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtIsbn.Location = new System.Drawing.Point(165, 304);
+            this.txtIsbn.MaxLength = 13;
             this.txtIsbn.Name = "txtIsbn";
             this.txtIsbn.Size = new System.Drawing.Size(208, 25);
             this.txtIsbn.TabIndex = 5;

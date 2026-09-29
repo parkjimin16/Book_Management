@@ -47,12 +47,12 @@ namespace Book_Management
 
             btnSearch.Click += async (_, _) =>
             {
-                await LoadListAsync();
+                await LoadList();
             };
 
             btnRefresh.Click += async (_, _) =>
             {
-                await LoadListAsync();
+                await LoadList();
             };
 
             btnLogout.Click += (_, _) =>
@@ -118,11 +118,11 @@ namespace Book_Management
                     break;
             }
 
-            await LoadListAsync();
+            await LoadList();
         }
 
         // 현재 화면 목록 조회
-        private async Task LoadListAsync()
+        private async Task LoadList()
         {
             if (_isBusy)
             {
@@ -169,7 +169,7 @@ namespace Book_Management
 
             e.SuppressKeyPress = true;
 
-            await LoadListAsync();
+            await LoadList();
         }
 
         // 새 도서 등록 팝업
@@ -190,9 +190,7 @@ namespace Book_Management
         }
 
         // 선택한 도서 삭제
-        private async void BtnDeleteBook_Click(
-            object sender,
-            EventArgs e)
+        private async void BtnDeleteBook_Click(object sender, EventArgs e)
         {
             if (_isBusy || _currentPage != AdminPage.Books)
             {
@@ -267,7 +265,7 @@ namespace Book_Management
                     ? "삭제되었습니다."
                     : "이미 삭제된 도서입니다.");
 
-            await LoadListAsync();
+            await LoadList();
         }
 
         // 도서 더블클릭 → 수정 팝업
@@ -308,8 +306,7 @@ namespace Book_Management
                 if (memberForm.ShowDialog(this) == DialogResult.OK)
                 {
                     // 본인 이름을 수정했으면 상단 표시도 변경
-                    if (_loginMember != null &&
-                        _loginMember.MemberNumber == member.MemberNumber)
+                    if (_loginMember != null && _loginMember.MemberNumber == member.MemberNumber)
                     {
                         _loginMember.Name = memberForm.SavedName;
 
@@ -318,7 +315,7 @@ namespace Book_Management
                             $"({_loginMember.LoginId})";
                     }
 
-                    await LoadListAsync();
+                    await LoadList();
                 }
 
                 return;
@@ -332,7 +329,7 @@ namespace Book_Management
                 if (requestForm.ShowDialog(this) == DialogResult.OK)
                 {
                     // 처리된 요청이 목록에서 사라지도록 새로 조회합니다.
-                    await LoadListAsync();
+                    await LoadList();
                 }
 
                 return;
@@ -373,7 +370,7 @@ namespace Book_Management
 
             if (bookForm.ShowDialog(this) == DialogResult.OK)
             {
-                await LoadListAsync();
+                await LoadList();
             }
         }
 
@@ -417,9 +414,7 @@ namespace Book_Management
         }
 
         // 신규 회원 등록
-        private async void BtnAddMember_Click(
-            object sender,
-            EventArgs e)
+        private async void BtnAddMember_Click(object sender, EventArgs e)
         {
             if (_isBusy || _currentPage != AdminPage.Members)
             {
@@ -436,9 +431,7 @@ namespace Book_Management
         }
 
         // 선택한 회원 삭제
-        private async void BtnDeleteMember_Click(
-            object sender,
-            EventArgs e)
+        private async void BtnDeleteMember_Click(object sender, EventArgs e)
         {
             if (_isBusy || _currentPage != AdminPage.Members)
             {
@@ -458,15 +451,11 @@ namespace Book_Management
                 return;
             }
 
-            int memberNumber =
-                Convert.ToInt32(rowView.Row["회원번호"]);
+            int memberNumber = Convert.ToInt32(rowView.Row["회원번호"]);
 
-            string name =
-                Convert.ToString(rowView.Row["이름"]);
+            string name = Convert.ToString(rowView.Row["이름"]);
 
-            bool isCurrentMember =
-                _loginMember != null &&
-                _loginMember.MemberNumber == memberNumber;
+            bool isCurrentMember = _loginMember != null && _loginMember.MemberNumber == memberNumber;
 
             string message =
                 $"선택한 회원을 삭제하겠습니까?\n\n" +
@@ -498,8 +487,7 @@ namespace Book_Management
 
             try
             {
-                result = await _memberRepository.DeleteMember(
-                    memberNumber);
+                result = await _memberRepository.DeleteMember(memberNumber);
             }
             catch (SqlException ex) when (ex.Number == 547)
             {
@@ -531,7 +519,7 @@ namespace Book_Management
                     "대출 중인 도서가 있습니다.\n" +
                     "반납 처리 후 회원을 삭제해주세요.");
 
-                await LoadListAsync();
+                await LoadList();
                 return;
             }
 
@@ -547,7 +535,7 @@ namespace Book_Management
                 return;
             }
 
-            await LoadListAsync();
+            await LoadList();
         }
 
         public AdminMainForm(LoginMember member) : this()

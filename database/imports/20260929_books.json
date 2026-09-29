@@ -1,0 +1,605 @@
+﻿[
+    {
+        "Row":  2,
+        "Title":  "빵충 사육 준수 사항",
+        "Isbn":  "9791194891178",
+        "Author":  "김혜영",
+        "Publisher":  "안전가옥",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  3,
+        "Title":  "데뷔 못 하면 죽는 병 걸림 5부 초판 한정 굿즈박스 세트 - 전4권",
+        "Isbn":  "9791141548612",
+        "Author":  "백덕수",
+        "Publisher":  "위시북스(KW북스)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  4,
+        "Title":  "박완서의 낱말들",
+        "Isbn":  "9788901300702",
+        "Author":  "박완서, 호원숙",
+        "Publisher":  "웅진지식하우스",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  5,
+        "Title":  "모순",
+        "Isbn":  "9788998441012",
+        "Author":  "양귀자",
+        "Publisher":  "쓰다",
+        "PublicationYear":  2013,
+        "Category":  "문학"
+    },
+    {
+        "Row":  6,
+        "Title":  "브람스를 좋아하세요...",
+        "Isbn":  "9788937461798",
+        "Author":  "프랑수아즈 사강, 김남주",
+        "Publisher":  "민음사",
+        "PublicationYear":  2008,
+        "Category":  "문학"
+    },
+    {
+        "Row":  7,
+        "Title":  "수족관",
+        "Isbn":  "9791198547514",
+        "Author":  "유래혁",
+        "Publisher":  "포스터샵",
+        "PublicationYear":  2023,
+        "Category":  "문학"
+    },
+    {
+        "Row":  8,
+        "Title":  "그랬다고 적었다",
+        "Isbn":  "9791141618575",
+        "Author":  "김애란",
+        "Publisher":  "문학동네",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  9,
+        "Title":  "옥스브리지의 철학 수업",
+        "Isbn":  "9791124248584",
+        "Author":  "고요엘",
+        "Publisher":  "상상스퀘어",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  10,
+        "Title":  "데미안",
+        "Isbn":  "9788937460449",
+        "Author":  "헤르만 헤세, 전영애",
+        "Publisher":  "민음사",
+        "PublicationYear":  2000,
+        "Category":  "문학"
+    },
+    {
+        "Row":  11,
+        "Title":  "멜로우TV 팀나빠 추리 탐정단 1",
+        "Isbn":  "9791173327889",
+        "Author":  "김기수, 김정욱, 멜로우 TV",
+        "Publisher":  "주니어김영사",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  12,
+        "Title":  "테오",
+        "Isbn":  "9791175772892",
+        "Author":  "앨런 레비, 노지양",
+        "Publisher":  "오팬하우스",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  13,
+        "Title":  "쇼펜하우어 인생수업 : 한 번뿐인 삶 이렇게 살아라 (30만 부 기념 개정증보판)",
+        "Isbn":  "9791193282045",
+        "Author":  "아르투어 쇼펜하우어, 김지민",
+        "Publisher":  "하이스트",
+        "PublicationYear":  2024,
+        "Category":  "문학"
+    },
+    {
+        "Row":  14,
+        "Title":  "시대예보: 수고인류의 시간",
+        "Isbn":  "9791170614166",
+        "Author":  "송길영",
+        "Publisher":  "교보문고(단행본)",
+        "PublicationYear":  2026,
+        "Category":  "사회과학"
+    },
+    {
+        "Row":  15,
+        "Title":  "이방인",
+        "Isbn":  "9788937443848",
+        "Author":  "알베르 카뮈, 김화영",
+        "Publisher":  "민음사",
+        "PublicationYear":  2019,
+        "Category":  "문학"
+    },
+    {
+        "Row":  16,
+        "Title":  "녹색 절벽의 신자들",
+        "Isbn":  "9791169087520",
+        "Author":  "조예은",
+        "Publisher":  "오리지널스",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  17,
+        "Title":  "에그박사 19",
+        "Isbn":  "9791175488885",
+        "Author":  "홍종현, 박송이, 이승현, 에그박사",
+        "Publisher":  "미래엔아이세움",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  18,
+        "Title":  "포핸즈 대본집 세트 - 전2권",
+        "Isbn":  "9791165704636",
+        "Author":  "신이원",
+        "Publisher":  "책깃",
+        "PublicationYear":  2026,
+        "Category":  "예술"
+    },
+    {
+        "Row":  19,
+        "Title":  "브레인 악셀",
+        "Isbn":  "9791122075106",
+        "Author":  "이진우",
+        "Publisher":  "바른뇌연구소",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  20,
+        "Title":  "머니 트렌드 2027",
+        "Isbn":  "9791124038826",
+        "Author":  "정태익",
+        "Publisher":  "북모먼트",
+        "PublicationYear":  2026,
+        "Category":  "사회과학"
+    },
+    {
+        "Row":  21,
+        "Title":  "문해내공",
+        "Isbn":  "9791124248515",
+        "Author":  "신종호.김윤정",
+        "Publisher":  "상상스퀘어",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  22,
+        "Title":  "찌니주의보",
+        "Isbn":  "9788936439996",
+        "Author":  "정지아",
+        "Publisher":  "창비",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  23,
+        "Title":  "마음의 어휘력",
+        "Isbn":  "9791169852180",
+        "Author":  "조아란.권희.이정윤",
+        "Publisher":  "페이지2(page2)",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  24,
+        "Title":  "니체의 초월자",
+        "Isbn":  "9791192559100",
+        "Author":  "프리드리히 니체, 김철",
+        "Publisher":  "히읏",
+        "PublicationYear":  2025,
+        "Category":  "문학"
+    },
+    {
+        "Row":  25,
+        "Title":  "원소 원정대",
+        "Isbn":  "9791155819326",
+        "Author":  "아게도리도리, 박재현, 장홍제",
+        "Publisher":  "윌북주니어",
+        "PublicationYear":  2026,
+        "Category":  "자연과학"
+    },
+    {
+        "Row":  26,
+        "Title":  "트렌드 코리아 2027",
+        "Isbn":  "9791124073483",
+        "Author":  "김난도",
+        "Publisher":  "미래의창",
+        "PublicationYear":  2026,
+        "Category":  "사회과학"
+    },
+    {
+        "Row":  27,
+        "Title":  "2026 큰별쌤 최태성의 별★별한국사 기출 500제 한국사능력검정시험 심화 (1, 2, 3급)",
+        "Isbn":  "9791138934459",
+        "Author":  "최태성",
+        "Publisher":  "이투스북",
+        "PublicationYear":  2025,
+        "Category":  "역사"
+    },
+    {
+        "Row":  28,
+        "Title":  "백앤아×고고프렌즈 국어별동대 1 : 시작",
+        "Isbn":  "9791199748118",
+        "Author":  "정수영, 한바리, 김선, 백앤아.고고프렌즈",
+        "Publisher":  "백앤아월드",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  29,
+        "Title":  "칵테일을 마시는 철학자들",
+        "Isbn":  "9791130682556",
+        "Author":  "사라 베이크웰, 조영",
+        "Publisher":  "다산초당",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  30,
+        "Title":  "그거 사전 2",
+        "Isbn":  "9791168344273",
+        "Author":  "홍성윤",
+        "Publisher":  "인플루엔셜(주)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  31,
+        "Title":  "인간 실격",
+        "Isbn":  "9788937461033",
+        "Author":  "다자이 오사무, 김춘미",
+        "Publisher":  "민음사",
+        "PublicationYear":  2004,
+        "Category":  "문학"
+    },
+    {
+        "Row":  32,
+        "Title":  "빛과 소리를 만져보면",
+        "Isbn":  "9791141618858",
+        "Author":  "박주환",
+        "Publisher":  "문학동네",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  33,
+        "Title":  "찰리 멍거 바이블 완결판",
+        "Isbn":  "9791194322313",
+        "Author":  "김재현.이건",
+        "Publisher":  "에프엔미디어",
+        "PublicationYear":  2026,
+        "Category":  "사회과학"
+    },
+    {
+        "Row":  34,
+        "Title":  "서리꽃 세트 - 전2권 (한정판 케이스 + 조정래 작가노트)",
+        "Isbn":  "9791167141637",
+        "Author":  "조정래",
+        "Publisher":  "해냄",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  35,
+        "Title":  "주술회전 모듈로 2",
+        "Isbn":  "9791142817649",
+        "Author":  "Yuji Iwasaki, 이정운, 아쿠타미 게게",
+        "Publisher":  "서울미디어코믹스(서울문화사)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  36,
+        "Title":  "사이언스 2027",
+        "Isbn":  "9788949132464",
+        "Author":  "내셔널지오그래픽 키즈, 이한음.김아림",
+        "Publisher":  "비룡소",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  37,
+        "Title":  "리더는 언제 차이를 만들어내는가",
+        "Isbn":  "9791173327964",
+        "Author":  "재레드 다이아몬드, 강주헌",
+        "Publisher":  "김영사",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  38,
+        "Title":  "캐릭캐릭 체인지! Jewel Joker 주얼 조커 4",
+        "Isbn":  "9791142830532",
+        "Author":  "PEACH-PIT, 김수연",
+        "Publisher":  "서울미디어코믹스(서울문화사)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  39,
+        "Title":  "2026 큰별쌤 최태성의 별★별한국사 한국사능력검정시험 심화(1, 2, 3급) 상",
+        "Isbn":  "9791138934428",
+        "Author":  "최태성",
+        "Publisher":  "이투스북",
+        "PublicationYear":  2025,
+        "Category":  "역사"
+    },
+    {
+        "Row":  40,
+        "Title":  "은둔",
+        "Isbn":  "9791172613006",
+        "Author":  "조현",
+        "Publisher":  "불광출판사",
+        "PublicationYear":  2026,
+        "Category":  "종교"
+    },
+    {
+        "Row":  41,
+        "Title":  "용기를 찾아서",
+        "Isbn":  "9791193904817",
+        "Author":  "란자이 굴라티, 박영준",
+        "Publisher":  "서삼독",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  42,
+        "Title":  "유선과 랄프",
+        "Isbn":  "9791193300800",
+        "Author":  "찰리 스미스",
+        "Publisher":  "좋은생각",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  43,
+        "Title":  "2026 큰별쌤 최태성의 별★별한국사 한국사능력검정시험 심화(1, 2, 3급) 하",
+        "Isbn":  "9791138934442",
+        "Author":  "최태성",
+        "Publisher":  "이투스북",
+        "PublicationYear":  2025,
+        "Category":  "역사"
+    },
+    {
+        "Row":  44,
+        "Title":  "체호프 단편선",
+        "Isbn":  "9788937460708",
+        "Author":  "안톤 파블로비치 체홉, 박현섭",
+        "Publisher":  "민음사",
+        "PublicationYear":  2002,
+        "Category":  "문학"
+    },
+    {
+        "Row":  45,
+        "Title":  "필립 K. 딕 컬렉션 (알라딘 리커버 특별판)",
+        "Isbn":  "9791188547579",
+        "Author":  "필립 K. 딕, 박중서",
+        "Publisher":  "폴라북스(현대문학)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  46,
+        "Title":  "나의 첫 번째 부동산 교과서",
+        "Isbn":  "9791193904435",
+        "Author":  "송희구",
+        "Publisher":  "서삼독",
+        "PublicationYear":  2026,
+        "Category":  "사회과학"
+    },
+    {
+        "Row":  47,
+        "Title":  "코스모스 (100만 부 기념판)",
+        "Isbn":  "9791124336083",
+        "Author":  "칼 세이건, 홍승수",
+        "Publisher":  "사이언스북스",
+        "PublicationYear":  2026,
+        "Category":  "자연과학"
+    },
+    {
+        "Row":  48,
+        "Title":  "멜로우TV 팀나빠 1 : 나사 빠진 친구들",
+        "Isbn":  "9791141186210",
+        "Author":  "쓰리포, 안경순, 멜로우 TV",
+        "Publisher":  "학산키즈",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  49,
+        "Title":  "아주 작은 습관의 힘 (50만 부 기념 스페셜 에디션)",
+        "Isbn":  "9791162540640",
+        "Author":  "제임스 클리어, 이한이",
+        "Publisher":  "비즈니스북스",
+        "PublicationYear":  2019,
+        "Category":  "총류"
+    },
+    {
+        "Row":  50,
+        "Title":  "재이",
+        "Isbn":  "9791141603649",
+        "Author":  "조남주",
+        "Publisher":  "문학동네",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  51,
+        "Title":  "이지패스 2026 ADsP 데이터분석 준전문가 (수험서 앱 제공)",
+        "Isbn":  "9791158396510",
+        "Author":  "전용문.박현민",
+        "Publisher":  "위키북스",
+        "PublicationYear":  2026,
+        "Category":  "기술과학"
+    },
+    {
+        "Row":  52,
+        "Title":  "무진기행",
+        "Isbn":  "9788937461491",
+        "Author":  "김승옥",
+        "Publisher":  "민음사",
+        "PublicationYear":  2007,
+        "Category":  "문학"
+    },
+    {
+        "Row":  53,
+        "Title":  "처음 읽는 그리스 로마 신화 15",
+        "Isbn":  "9791175488731",
+        "Author":  "최설희, 한현동, 정수영",
+        "Publisher":  "미래엔아이세움",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  54,
+        "Title":  "호경",
+        "Isbn":  "9791199983915",
+        "Author":  "이인현",
+        "Publisher":  "히스테리안",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  55,
+        "Title":  "눈 내리는 삼일포",
+        "Isbn":  "9791141619992",
+        "Author":  "김연수",
+        "Publisher":  "문학동네",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  56,
+        "Title":  "ETS 토익 정기시험 기출문제집 1000 Vol. 5 Reading (리딩)",
+        "Isbn":  "9788917243802",
+        "Author":  "ETS",
+        "Publisher":  "(주)YBM(와이비엠)",
+        "PublicationYear":  2025,
+        "Category":  "언어"
+    },
+    {
+        "Row":  57,
+        "Title":  "더 시스템",
+        "Isbn":  "9791188102259",
+        "Author":  "스콧 애덤스, 김인수",
+        "Publisher":  "베리북",
+        "PublicationYear":  2024,
+        "Category":  "총류"
+    },
+    {
+        "Row":  58,
+        "Title":  "오만과 편견",
+        "Isbn":  "9788937460883",
+        "Author":  "제인 오스틴",
+        "Publisher":  "민음사",
+        "PublicationYear":  2003,
+        "Category":  "문학"
+    },
+    {
+        "Row":  59,
+        "Title":  "극락가 6 (더블특전판)",
+        "Isbn":  "9791142366376",
+        "Author":  "사노 유토",
+        "Publisher":  "대원씨아이(만화)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  60,
+        "Title":  "기분이 태도가 되지 말자 (30만 부 기념 최신 개정판)",
+        "Isbn":  "9791197647666",
+        "Author":  "김수현",
+        "Publisher":  "하이스트",
+        "PublicationYear":  2022,
+        "Category":  "총류"
+    },
+    {
+        "Row":  61,
+        "Title":  "독서의 기술",
+        "Isbn":  "9791193939666",
+        "Author":  "고명환",
+        "Publisher":  "라곰",
+        "PublicationYear":  2026,
+        "Category":  "총류"
+    },
+    {
+        "Row":  62,
+        "Title":  "ETS 토익 정기시험 기출문제집 1000 Vol. 5 Listening (리스닝)",
+        "Isbn":  "9788917243796",
+        "Author":  "ETS",
+        "Publisher":  "(주)YBM(와이비엠)",
+        "PublicationYear":  2025,
+        "Category":  "언어"
+    },
+    {
+        "Row":  63,
+        "Title":  "캐릭캐릭 체인지! Jewel Joker 주얼 조커 4 (특장판)",
+        "Isbn":  "9791142830655",
+        "Author":  "PEACH-PIT, 김수연",
+        "Publisher":  "서울미디어코믹스(서울문화사)",
+        "PublicationYear":  2026,
+        "Category":  "문학"
+    },
+    {
+        "Row":  64,
+        "Title":  "자몽살구클럽",
+        "Isbn":  "9791199305304",
+        "Author":  "한로로 (HANRORO)",
+        "Publisher":  "어센틱",
+        "PublicationYear":  2025,
+        "Category":  "문학"
+    },
+    {
+        "Row":  65,
+        "Title":  "오뒷세이아 (알라딘 리커버 특별판)",
+        "Isbn":  "9788991290150",
+        "Author":  "호메로스, 천병희",
+        "Publisher":  "도서출판 숲",
+        "PublicationYear":  2015,
+        "Category":  "문학"
+    },
+    {
+        "Row":  66,
+        "Title":  "PD가 묻고 운명이 답하다",
+        "Isbn":  "9791199136250",
+        "Author":  "大明 이석진",
+        "Publisher":  "푸른솔",
+        "PublicationYear":  2025,
+        "Category":  "종교"
+    },
+    {
+        "Row":  67,
+        "Title":  "절창 (20만 부 기념 화이트 에디션)",
+        "Isbn":  "9791141602451",
+        "Author":  "구병모",
+        "Publisher":  "문학동네",
+        "PublicationYear":  2025,
+        "Category":  "문학"
+    },
+    {
+        "Row":  68,
+        "Title":  "내 인생이 왜 당신 마음에 들어야 합니까",
+        "Isbn":  "9791199889378",
+        "Author":  "김경일",
+        "Publisher":  "퍼스트펭귄",
+        "PublicationYear":  2026,
+        "Category":  "철학"
+    }
+]

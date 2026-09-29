@@ -116,9 +116,7 @@ namespace Book_Management
             pnlLoanActions.Visible = isLoans;
             colDueDate.Visible = isLoans;
 
-            lblPage.Text = isSearch
-                ? "검색 결과"
-                : "내 대출 목록";
+            lblPage.Text = isSearch ? "검색 결과" : "내 대출 목록";
 
             dgvBooks.DataSource = null;
 
@@ -138,7 +136,7 @@ namespace Book_Management
             button.ForeColor = selected ? Color.White : Color.Black;
         }
 
-        private void BindBooks(DataTable table)
+        private void DisplayBooks(DataTable table)
         {
             dgvBooks.DataSource = table;
             dgvBooks.ClearSelection();
@@ -162,8 +160,7 @@ namespace Book_Management
 
             if (!string.IsNullOrWhiteSpace(txtYear.Text))
             {
-                if (!short.TryParse(txtYear.Text.Trim(), out short parsed) ||
-                    parsed < 1 || parsed > 9999)
+                if (!short.TryParse(txtYear.Text.Trim(), out short parsed) || parsed < 1 || parsed > 9999)
                 {
                     MessageBox.Show(
                         this,
@@ -191,7 +188,7 @@ namespace Book_Management
                 // 조회에 성공한 조건을 팝업 종료 후 재사용합니다.
                 _lastSearch = search;
 
-                BindBooks(table);
+                DisplayBooks(table);
             });
         }
 
@@ -232,7 +229,7 @@ namespace Book_Management
                     dgvBooks.DataSource = null;
                     lblPage.Text = "검색 결과";
 
-                    BindBooks(await _lastSearch());
+                    DisplayBooks(await _lastSearch());
                 }
             });
         }
@@ -256,7 +253,7 @@ namespace Book_Management
 
             DataTable table = await _repository.GetMyLoans(_member.LoginId);
 
-            BindBooks(table);
+            DisplayBooks(table);
         }
 
         private async Task ReturnBook()
@@ -322,8 +319,7 @@ namespace Book_Management
 
             try
             {
-                using var form =
-                    new BookModifyForm(isRequestMode: true);
+                using var form = new BookModifyForm(isRequestMode: true);
 
                 form.ShowDialog(this);
             }

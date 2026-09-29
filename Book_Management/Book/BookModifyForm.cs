@@ -12,18 +12,13 @@ namespace Book_Management
 {
     public partial class BookModifyForm : Form
     {
-
         private readonly AdminBookRepository _repository = new AdminBookRepository();
         private readonly UserBookRepository _requestRepository = new UserBookRepository();
-
         private readonly TextBox[] _inputs;
-        // null이면 등록, 값이 있으면 해당 관리번호의 도서 수정
-        private int? _bookNumber;
+        private int? _bookNumber;         // null이면 등록, 값이 있으면 해당 관리번호의 도서 수정
         private bool _isBusy;
-        private bool _isRequestMode;
-
-        // 값이 있으면 관리자가 요청 도서를 정식 등록하는 화면입니다.
-        private string _requestIsbn;
+        private bool _isRequestMode;  
+        private string _requestIsbn; // 값이 있으면 관리자가 요청 도서를 정식 등록하는 화면입니다.
         private bool IsRequestApprovalMode => _requestIsbn != null;
 
         public BookModifyForm()
@@ -31,12 +26,6 @@ namespace Book_Management
             InitializeComponent();
 
             cmbCategory.Items.Remove("전체");
-
-            txtTitle.MaxLength = 200;
-            txtAuthor.MaxLength = 100;
-            txtPublisher.MaxLength = 100;
-            txtYear.MaxLength = 4;
-            txtIsbn.MaxLength = 13;
 
             cmbCategory.SelectedIndex = -1;
             // 카테고리를 선택하면 오류 색상 복원
@@ -151,9 +140,7 @@ namespace Book_Management
 
             cmbCategory.BackColor = Color.White;
 
-            TextBox[] emptyBoxes = _inputs
-                .Where(box => string.IsNullOrWhiteSpace(box.Text))
-                .ToArray();
+            TextBox[] emptyBoxes = _inputs.Where(box => string.IsNullOrWhiteSpace(box.Text)).ToArray();
 
             bool categoryNotSelected = cmbCategory.SelectedIndex == -1;
 
@@ -184,8 +171,7 @@ namespace Book_Management
             }
 
             // 입력한 발행연도를 숫자로 변환하여 year에 저장합니다.
-            if (!short.TryParse(txtYear.Text.Trim(), out year) ||
-                year < 1 || year > 9999)
+            if (!short.TryParse(txtYear.Text.Trim(), out year) || year < 1 || year > 9999)
             {
                 txtYear.BackColor = Color.LightCoral;
 
@@ -199,9 +185,7 @@ namespace Book_Management
 
             string isbn = txtIsbn.Text.Trim();
 
-            if (!Regex.IsMatch(
-                isbn,
-                @"\A(?:[0-9]{13}|[0-9]{9}[0-9Xx])\z"))
+            if (!Regex.IsMatch(isbn, @"\A(?:[0-9]{13}|[0-9]{9}[0-9Xx])\z"))
             {
                 txtIsbn.BackColor = Color.LightCoral;
 
@@ -397,8 +381,7 @@ namespace Book_Management
                     return;
                 }
 
-                registered =
-                    await _repository.RegisterRequestedBook(_requestIsbn);
+                registered = await _repository.RegisterRequestedBook(_requestIsbn);
             }
             catch (SqlException ex)
                 when (ex.Number == 2601 || ex.Number == 2627)

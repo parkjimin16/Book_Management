@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.usermain = new System.Windows.Forms.Label();
             this.dgvBooks = new System.Windows.Forms.DataGridView();
             this.colTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -148,8 +148,8 @@
             // colDueDate
             // 
             this.colDueDate.DataPropertyName = "반납일";
-            dataGridViewCellStyle1.Format = "yyyy-MM-dd";
-            this.colDueDate.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "yyyy-MM-dd";
+            this.colDueDate.DefaultCellStyle = dataGridViewCellStyle7;
             this.colDueDate.HeaderText = "반납 예정일";
             this.colDueDate.Name = "colDueDate";
             this.colDueDate.ReadOnly = true;
@@ -160,9 +160,9 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Location = new System.Drawing.Point(374, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(41, 12);
+            this.lblTitle.Size = new System.Drawing.Size(65, 12);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "도서관";
+            this.lblTitle.Text = "ZDA도서관";
             // 
             // btnLogout
             // 
@@ -295,6 +295,7 @@
             // 
             // pnlLoanActions
             // 
+            this.pnlLoanActions.AutoScroll = true;
             this.pnlLoanActions.Controls.Add(this.btnReturn);
             this.pnlLoanActions.Controls.Add(this.btnRefreshLoans);
             this.pnlLoanActions.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -335,8 +336,11 @@
             this.Controls.Add(this.btnRequest);
             this.Controls.Add(this.lblPage);
             this.Controls.Add(this.pnlContent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "UserMainForm";
-            this.Text = "도서관";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ZDA도서관";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).EndInit();
             this.pnlFilters.ResumeLayout(false);
             this.pnlFilters.PerformLayout();

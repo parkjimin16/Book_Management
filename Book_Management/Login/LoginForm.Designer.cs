@@ -34,6 +34,9 @@
             this.PW_input = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ID
@@ -89,6 +92,26 @@
             this.btn_register.Text = "회원가입";
             this.btn_register.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Book_Management.Properties.Resources.zda_icon_white_CzZmuRP6;
+            this.pictureBox1.Location = new System.Drawing.Point(226, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(355, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(346, 64);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "ZDA도서관";
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.btn_login;
@@ -96,6 +119,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(227)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(929, 466);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ID_input);
             this.Controls.Add(this.PW_input);
             this.Controls.Add(this.btn_login);
@@ -106,7 +131,8 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "도서관-로그인";
+            this.Text = "ZDA도서관-로그인";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +146,7 @@
         private System.Windows.Forms.TextBox PW_input;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Button btn_register;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

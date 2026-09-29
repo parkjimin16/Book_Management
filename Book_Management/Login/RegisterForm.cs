@@ -235,9 +235,7 @@ namespace Book_Management
 
             string phone = Phone_input.Text.Trim();
 
-            if (!Regex.IsMatch(
-                    phone,
-                    @"\A010-[0-9]{4}-[0-9]{4}\z"))
+            if (!Regex.IsMatch(phone, @"\A010-[0-9]{4}-[0-9]{4}\z"))
             {
                 MarkError(Phone_input);
                 errors.Add("연락처 형식이 잘못되었습니다");
